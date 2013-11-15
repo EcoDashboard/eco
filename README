@@ -7,6 +7,8 @@
 
 `npm install -g yo` from within the npm console on Windows or just in your normal shell on Mac
 
+* From the root of the repository run `bower install` and `npm install`
+
 ##Running the local development server
 
 While in the root directory of the repository, run `grunt server`
