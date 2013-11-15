@@ -1,6 +1,6 @@
-#Main repository for EcoDashboard front end code
+# Main repository for EcoDashboard front end code
 
-##Prereqs
+## Prereqs
 
 * Nodejs - http://nodejs.org/
 * Yeoman - http://yeoman.io 
