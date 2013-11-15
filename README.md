@@ -1,4 +1,6 @@
-# Main repository for EcoDashboard front end code
+#Eco
+
+Main repository for EcoDashboard front end code
 
 ## Prereqs
 
