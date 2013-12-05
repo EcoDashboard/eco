@@ -193,6 +193,19 @@ table.tablesorter thead tr th:hover {
 	color: #ffffff;
 	background-color: #999;
 }
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+	color: #ffffff;
+	background-color: #888;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+	color: #ffffff;
+	background-color: #888;
+}
 	/* Nav Messages */
 
 	.messages-dropdown .dropdown-menu {
