@@ -62,14 +62,15 @@ body {
 }
 /* Navigation Bar styles*/
 .nav, .navbar{
-	background-color: #DDD;
+	background-color: #C8C8C8 ;
+	border: none;
 }
 .navbar-inverse .navbar-nav > li > a {
 	color: #777;
 }
 .nav {
 	i.fa-globe{
-		color: #66FFCC;
+		color: #6666FF;
 	}
 	i.fa-tint{
 		color: #00F;
@@ -117,17 +118,17 @@ table.tablesorter thead tr th:hover {
 
 	/* Wrappers */
 
-	#wrapper {
+#wrapper {
 	padding-left: 225px;
-	}
+}
 
-	#page-wrapper {
+#page-wrapper {
 	padding: 15px 25px;
-	}
+}
 
 	/* Side Nav */
 
-	.side-nav {
+.side-nav {
 	margin-left: -225px;
 	left: 225px;
 	width: 225px;
@@ -138,11 +139,11 @@ table.tablesorter thead tr th:hover {
 	border: none;
 	background-color: #DDD;
 	overflow-y: auto;
-	}
+}
 
 	/* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
 
-	.side-nav>li.dropdown>ul.dropdown-menu {
+.side-nav>li.dropdown>ul.dropdown-menu {
 	position: relative;
 	min-width: 225px;
 	margin: 0;
@@ -152,13 +153,18 @@ table.tablesorter thead tr th:hover {
 	background-color: transparent;
 	box-shadow: none;
 	-webkit-box-shadow: none;
-	}
+}
 
-	.side-nav>li.dropdown>ul.dropdown-menu>li>a {
+.side-nav>li.dropdown>ul.dropdown-menu>li>a {
 	color: #777;
 	padding: 15px 15px 15px 25px;
-	}
-	
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+	background-color: #BBB;
+}
 	.side-nav>li.dropdown>ul.dropdown-menu>li>a:hover,
 	.side-nav>li.dropdown>ul.dropdown-menu>li>a.active,
 	.side-nav>li.dropdown>ul.dropdown-menu>li>a:focus {
