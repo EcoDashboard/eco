@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html >
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -10,30 +10,37 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/300047f3.main.css"/>
-        <script src="scripts/vendor/d9e84ecb.modernizr.js"></script>
+        
 
-        <!-- <link href="styles/stylish-portfolio.css" rel="stylesheet"> -->
-    	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    	<link href="styles/eco.css" rel="stylesheet">
-    	<link href="styles/the-big-picture.css" rel="stylesheet">
-    	<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,200,500" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="styles/db8a82d7.main.css"/>
+
+
+
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-animate.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.min.js"></script>
+        <script src="scripts/eco.js"></script>
+        <!-- endbuild <-->
+
+		<script src="scripts/20bdd8fe.plugins.js"></script>
+
 
     </head>
-    <body>
+    <body ng-app="eco">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
 
     
-  	<div class="full static-container">
-	    <div class="background-video">
-	  		<video loop="" src="beach.mp4" type="video/mp4" poster="images/bg.jpg" preload="preload" autoplay="true"></video>
-	  	</div>
-  	</div>
+  	
 
-  	<nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+  	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -42,28 +49,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">EcoDashboard</a>
+          <a class="navbar-brand" href="#/">EcoDashboard</a>
         </div>
-
+		<div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Open Board</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="dashboard.html">Open Board</a>
+        </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="city_profile.html">Example Profile</a></li>
+            <li><a href="#/about_us">About Us</a></li>
+            <li><a href="#/city/seattle">Example Profile</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav>
-    
-    <div class="container">
-      <div class="row">
-        <div class="title col-lg-8 col-sm-12">
-          <h1>The EcoDashboard Project</h1>
-          <p>Helping cities reach their green goals.</p>
-        </div>
-      </div>
-    </div>
 
+    <div ng-view="">
+
+	    
+
+    </div>
 
         <script src="scripts/50b6600a.vendor.js"></script>
 
@@ -77,22 +88,10 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <script src="scripts/b6c3df09.main.js"></script>
+        <script src="scripts/d41d8cd9.main.js"></script>
 
-        <script src="scripts/20bdd8fe.plugins.js"></script>
+        
 
-        <script>
-        $("#menu-close").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-    </script>
-    <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-    </script>
     <script>
       $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
