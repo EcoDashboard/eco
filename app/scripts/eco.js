@@ -27,12 +27,20 @@ app.config(['$routeProvider',
         controller: 'homeCtrl'
       }).
       when('/city/:cityId', {
-        templateUrl: 'city-profile.html',
+        templateUrl: 'city_profile.html',
         controller: 'cityProfileCtrl'
       }).
       when('/about_us', {
         templateUrl: 'aboutus.html',
         controller: 'aboutUsCtrl'
+      }).
+      when('/how-it-works', {
+      	templateUrl: 'howitworks.html',
+      	controller: 'worksCtrl'
+      }).
+      when('/dashboard',{
+      	templateUrl: 'dashboard.html',
+      	controller: 'dashboardCtrl'
       }).
       otherwise({
         redirectTo: '/'
