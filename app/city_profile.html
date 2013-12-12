@@ -1,97 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Basic Company Template for Bootstrap 3</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    
-    <link href="styles/profile.css" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">EcoDashboard</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#about">About Eco</a></li>
-            <li><a href="#ourteam">Our Team</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
-
-    <div class="header-image">
+    <div style="background-image: url('images/{{city.city_id}}.jpg');" class="header-image">
 
       <div class="headline">
         <div class="container">
-          <h1>Seattle</h1>
+          <h1>{{city.city_name}}</h1>
+          <h5>{{city.country_name}}</h5>
         </div>
       </div>
 
     </div><!-- /header-image -->
 
-    <div class="container">
+    
+    <div class="row">
 
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="featurette" id="about">
-        <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-        <h2 class="featurette-heading">This First Heading <span class="text-muted">Will Catch Your Eye</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <div class="col-md-2 visible-lg visible-md">
+        <div id="affix" data-spy="affix" data-offset-top="300" data-offset-bottom="250">
+          <ul class="nav">
+            <li><a href="#air">Air</a></li> 
+            <li><a href="#water">Water</a></li>
+            <li><a href="#earth">Earth</a></li>
+            <li><a href="#waste">Waste</a></li>
+            <li><a href="#energy">Energy</a></li>
+          </ul>
+        </div>
       </div>
 
-      <hr class="featurette-divider">
 
-      <div class="featurette" id="services">
-        <img class="featurette-image img-circle img-responsive pull-left" src="http://placecreature.com/500/500">
-        <h2 class="featurette-heading">The Second Heading <span class="text-muted">Is Pretty Cool Too.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+
+
+    <div class="col-md-10 col-xs-12">
+    <!-- START THE ELEMENTS http://www.colourlovers.com/palette/2365175/The_Elements -->
+
+    <!-- <div class="container" > -->
+      <div class="row subindices" id="air">
+        <div class="col-xs-12">
+          <div class="row main">
+            <img class="img-circle img-responsive pull-right" src="http://placehold.it/250x250">
+            <h2 class="featurette-heading"><i class="fa fa-cloud"></i> Air</h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          </div>
+          <div class="row indicators">
+              <div class="col-md-2 ">
+                <h4>Sulfur Oxides</h4>
+                <p>Sulfur dioxide, a colorless, reactive gas, is produced when sulfur-containing fuels such as coal and oil are burned.</p>
+              </div>
+              <div class="col-md-2">
+                <h4>Ozone</h4>
+                <p>Ozone forms near the ground when pollutants react chemically in sunlight.</p>
+              </div>
+              <div class="col-md-2">
+                <h4>Atmospheric particulate matter</h4>
+                <p>Particle pollution consists of a mixture of solids and liquid droplets.</p>
+              </div>
+              <div class="col-md-2">
+                <h4>Nitrogen</h4>
+                <p>The main effect of breathing in raised levels of nitrogen dioxide is the increased likelihood of respiratory problems.</p>
+              </div>
+              <div class="col-md-2">
+                <h4>Lead</h4>
+                <p>Lead has only harmful effects on our health, and each time we are exposed to lead some of it is stored in our bodies for the rest of our lives.</p>
+              </div>
+              <div class="col-md-2">
+                <h4>Carbon monoxide</h4>
+                <p>Carbon monoxide is a toxic gas, but, being colorless, odorless, tasteless, and initially non-irritating, it is very difficult for people to detect.</p>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="row subindices" id="water">
+        <div class="col-xs-12">
+          <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/250x250">
+          <h2 class="featurette-heading"><i class="fa fa-tint"></i> Water</h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+
+        </div>
       </div>
 
-      <hr class="featurette-divider">
+      <div class="row subindices" id="earth">
+        <div class="col-xs-12">
+          <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/250x250">
+          <h2 class="featurette-heading"><i class="fa fa-leaf"></i> Earth</h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 
-      <div class="featurette" id="contact">
-        <img class="featurette-image img-circle img-responsive pull-right" src="http://placecreature.com/500/500">
-        <h2 class="featurette-heading">The Third Heading <span class="text-muted">Will Seal the Deal.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
       </div>
 
-      <!-- /END THE FEATURETTES -->
+      <div class="row subindices" id="waste">
+        <div class="col-xs-12">
+          <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/250x250">
+          <h2 class="featurette-heading"><i class="fa fa-trash-o"></i> Waste</h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 
-      <hr>
+        </div>
+      </div>
+
+      <div class="row subindices" id="energy">
+        <div class="col-xs-12">
+          <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/250x250">
+          <h2 class="featurette-heading"><i class="fa fa-bolt"></i> Energy</h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+
+        </div>
+      </div>
+
 
       <!-- FOOTER -->
       <footer>
-        <p>Copyright &copy; Company 2013</p>
       </footer>
       <!-- /END OF FOOTER -->
-
-    </div><!-- /container -->
-
-    <!-- JavaScript -->
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  </body>
-
-</html>
+      </div>
+  </div>
