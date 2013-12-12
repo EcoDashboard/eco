@@ -127,14 +127,44 @@
               <li><a href="index.html"><i class="fa fa-dashboard"></i> EcoDashboard</a></li>
               <li class="active"><i class="fa fa-edit"></i> Data Input</li>
             </ol>
+			<ol class="breadcrumb">
+              <li>
+				<button type="submit" class="btn btn-default">Submit All</button>
+				<button type="reset" class="btn btn-default">Reset All</button> 
+			  </li>
+            </ol>
           </div>
         </div><!-- /.row -->
 		
 		<!-- Data input forms -->
+		
+		<!-- General City Data-->
+		<div class="row">
+			<h2>&nbsp;&nbsp;&nbsp;General Information</h2>
+			<form role="form" class="form-inline gen-info">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-4 control-label">Population</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="" placeholder="Population">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-4 control-label">Area</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="" placeholder="Area in km2">
+					</div>
+				</div>
+			</form>
+			<br>
+			&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-default">Submit</button>
+			<button type="reset" class="btn btn-default">Reset</button> 
+		</div>
+		<!-- /.General City Data -->
+		<!-- Inidcators -->
         <div class="row">
 			<!-- Water Indicators -->
 			<div class="col-xs-6">
-				<form role="form" class="water-indicators">
+				<form role="form" class="water-indicators indicators-form">
 					<h2><i class="fa fa-tint"></i> Water Indicators</h2>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-4 control-label">Adequate sanitation</label>
@@ -206,9 +236,84 @@
 							<span class="help-block">Rain sewage coverage.</span>
 						</div>
 					</div>
-				</form>	
+					<div class="form-group">
+						<div class="col-sm-6">
+							<button type="submit" class="btn btn-default">Submit</button>
+							<button type="reset" class="btn btn-default">Reset</button>
+						</div>
+					</div>
+				</form>
 			</div>
 			<!-- /. Water Indicators -->
+			<!-- Waste Indicators -->
+			<div class="col-xs-6">
+				<form role="form" class="waste-indicators indicators-form">
+					<h2><i class="fa fa-trash-o"></i> Waste Indicators</h2>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-6 control-label">Total waste generated</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Total waste in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-4 control-label">Tota waste recycled</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Tota waste recycled in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-8 control-label">Total plastic waste</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Plastic waste in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-8 control-label">Total glass waste</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Glass waste in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-8 control-label">Total metal waste</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Metal waste in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-8 control-label">Total organic waste</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Organic waste in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-8 control-label">Total construction waste</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Construction waste in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-8 control-label">Total paper waste</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="" placeholder="Paper waste in kg">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-6">
+							<button type="submit" class="btn btn-default">Submit</button>
+							<button type="reset" class="btn btn-default">Reset</button>
+						</div>
+					</div>
+				</form>	
+			</div>
+			<!-- /. Land Indicators -->
 			<!-- Air Indicators-->
 			<div class="col-lg-6">
 				<form role="form" class="air-indicators">
@@ -255,13 +360,19 @@
 							<span class="help-block">The ammount of Carbon monoxide in the air.</span>
 						</div>
 					</div>
+					div class="form-group">
+						<div class="col-sm-6">
+							<button type="submit" class="btn btn-default">Submit</button>
+							<button type="reset" class="btn btn-default">Reset</button>
+						</div>
+					</div>
 				</form>			
 			</div>
 			<!-- /. Air Indicators -->
 			<!-- Land Indicators -->
 			<div class="col-lg-6">
 				<form role="form" class="land-indicators">
-					<h2><i class="fa fa-cloud"></i> Land Indicators</h2>
+					<h2><i class="fa fa-leaf"></i> Land Indicators</h2>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-4 control-label">Forest Growing Stock</label>
 						<div class="col-sm-10">
@@ -304,13 +415,17 @@
 							<span class="help-block"></span>
 						</div>
 					</div>
+					<div class="form-group">
+						<div class="col-sm-6">
+							<button type="submit" class="btn btn-default">Submit</button>
+							<button type="reset" class="btn btn-default">Reset</button>
+						</div>
+					</div>
 				</form>
 			</div>
 			<!-- /. Land Indicatros -->
         </div><!-- /.row -->
-		
 		<!-- /.Data input forms -->
-		
       </div><!-- /#page-wrapper -->
     </div><!-- /#wrapper -->
 
