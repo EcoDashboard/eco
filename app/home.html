@@ -1,6 +1,6 @@
-<div class="full static-container">
+<div class="full static-container" style="display:none">
 		    <div class="background-video">
-		  		<video loop src="beach2.mp4" type="video/mp4" poster="images/bg.jpg" preload="preload" autoplay="true"></video>
+		  		<video loop src="beach2.mp4" type="video/mp4" poster="images/beach-placeholder.png" preload="auto" autoplay="true"></video>
 		  	</div>
 	  	</div>
 	    
@@ -8,8 +8,31 @@
 	      <div class="row">
 	        <div class="title col-lg-12 col-sm-12">
 	          <h1>The EcoDashboard Project</h1>
-	          <p>Helping cities reach their green goals.</p>
+	          <div class="row" id="home-icons">
+	          	<div class="col-xs-2">
+		          <i class="fa fa-cloud"></i>
+		        </div>
+		        <div class="col-xs-2">
+		          <i class="fa fa-tint"></i>
+				</div>
+				<div class="col-xs-2">
+		          <i class="fa fa-leaf"></i>
+				</div>
+				<div class="col-xs-2">
+		          <i class="fa fa-trash-o"></i>
+				</div>
+				<div class="col-xs-2">
+		          <i class="fa fa-bolt"></i>
+				</div>
+			  </div>
 	        </div>
 	      </div>
 	    </div>
 </div>
+
+<script>
+	$(window).ready(function(){
+		console.log("yup");
+		$('div.full').fadeIn(4000);
+	});
+</script>
