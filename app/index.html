@@ -20,33 +20,19 @@
     	<link href="styles/eco.css" rel="stylesheet">
     	<link href="styles/the-big-picture.css" rel="stylesheet">
     	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300' rel='stylesheet' type='text/css'>
+		<link href="styles/animation.css" rel="stylesheet">
         <!-- endbuild -->
-
-
+        
+        <!-- build:js scripts/jquery.min.js	 --> 
+        <script src="bower_components/jquery/jquery.min.js"></script>
+		<!-- endbuild -->
 
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
-        <script src="bower_components/jquery/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-animate.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.min.js"></script>
-        <script src="scripts/eco.js"></script>
-        <!-- endbuild <--></-->
+        <!-- endbuild -->
 
 		<!-- build:js scripts/plugins.js -->
-        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
-        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
-        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
-        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
-        <script src="bower_components/sass-bootstrap/js/button.js"></script>
-        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
-        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
-        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
         <!-- endbuild -->
 
 
@@ -67,7 +53,7 @@
           </button>
           <a class="navbar-brand" href="#/">EcoDashboard</a>
         </div>
-		<div class="navbar-header">
+		<!-- <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -78,7 +64,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
             <li><a href="#/dashboard">Open Board</a></li>
-            <li><a href="#/about_us">About Us</a></li>
+            <li><a href="#/about-us">About Us</a></li>
             <li><a href="#/how-it-works">How It Works</a></li>
             <li><a href="#/city/206">Example Profile</a></li>
           </ul>
@@ -109,29 +95,32 @@
         </script>
 
         <!-- build:js scripts/main.js -->
-
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="scripts/charts.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-animate.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.min.js"></script>
+        <script src="scripts/tc-angular-charts.js"></script>
+        <script src="scripts/eco.js"></script>
 
         <!-- endbuild -->
-
-        
-
     <script>
-      $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-            || location.hostname == this.hostname) {
+      // $(function() {
+      //   $('a[href*=#]:not([href=#])').click(function() {
+      //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+      //       || location.hostname == this.hostname) {
 
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
-        });
-      });
+      //       var target = $(this.hash);
+      //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      //       if (target.length) {
+      //         $('html,body').animate({
+      //           scrollTop: target.offset().top
+      //         }, 1000);
+      //         return false;
+      //       }
+      //     }
+      //   });
+      // });
     </script>
 </body>
 </html>
