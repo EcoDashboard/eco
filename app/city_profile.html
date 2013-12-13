@@ -13,26 +13,23 @@
 
     
     <div class="row">
+      <div class="col-md-2 visible-lg visible-md .hidden-sm .hidden-xs">
+        <!-- data-spy="affix" data-offset-top="300" data-offset-bottom="250"> -->
+        <div class="affix">
+              <ul class="nav">
+                <li><a  id="airair" href="#air">Air</a></li> 
+                <li><a  id="airair" href="#water">Water</a></li>
+                <li><a  id="airair" href="#earth">Earth</a></li>
+                <li><a  id="airair" href="#waste">Waste</a></li>
+                <li><a  id="airair" href="#energy">Energy</a></li>
+              </ul>
+          </div>
+            </div>
 
-      <div class="col-md-2 visible-lg visible-md">
-        <div id="affix" data-spy="affix" data-offset-top="300" data-offset-bottom="250">
-          <ul class="nav">
-            <li><a href="#air">Air</a></li> 
-            <li><a href="#water">Water</a></li>
-            <li><a href="#earth">Earth</a></li>
-            <li><a href="#waste">Waste</a></li>
-            <li><a href="#energy">Energy</a></li>
-          </ul>
-        </div>
-      </div>
-
-
-
-
-    <div class="col-md-10 col-xs-12">
-    <!-- START THE ELEMENTS http://www.colourlovers.com/palette/2365175/The_Elements -->
-
-    <!-- <div class="container" > -->
+         <div class="col-md-10 col-xs-12">
+  <!-- START THE ELEMENTS http://www.colourlovers.com/palette/2365175/The_Elements -->
+   
+     <!-- <div class="container" > -->
       <div class="row subindices" id="air">
         <div class="col-xs-12">
           <div class="row main">
@@ -106,10 +103,22 @@
         </div>
       </div>
 
+<script type="text/javascript">
+ $('.affix').affix({
+    offset: {
+      top: 290
 
+//        function () {
+  //      return (this.bottom = $('.bs-footer').outerHeight(true))
+//      }
+    }
+  })
+</script>
+  
       <!-- FOOTER -->
       <footer>
       </footer>
       <!-- /END OF FOOTER -->
       </div>
   </div>
+

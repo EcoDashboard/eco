@@ -14,17 +14,50 @@
 // CITY PROFILE SECTION
 
 
-#affix{
-  top:80px;
+.affix{
+  
+  //  top:290px;
+    
+    position:fixed;
+   
+      top:290px;
+   
 
+    width:inherit;
 
-  ul {
-    li {
-      width:100%;
-    }
-  }
 
 }
+
+
+.affix-top{
+//    padding:25px;
+    top:290px;
+//width:auto;
+}
+
+
+#airair
+{
+margin-bottom:12px;
+background-color:grey;
+
+color: white;
+font-weight:bold;
+//text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+font-family:sans-serif;
+font-synthesis:weight;
+text-align:center;
+}
+
+//.affix { position: fixed; top: 150px; bottom: auto; }
+//.affix-bottom { position: fixed; top: auto; bottom: 595px; }
+
+//.other-awesome-affix-styles {
+//    margin-top: 19px;
+//    margin-bottom: 19px;
+//    border: 1px solid #999; /* =2 for top and bottom */
+//}
+
 
 .subindices {
 
