@@ -29,18 +29,131 @@
 
 	h1 {
 		font-size: 5rem;
-		font-family:"Raleway", 'sans-serif';
+		font-family:"Raleway", sans-serif;
 		font-weight:200;
 		
 	}	
+}
 
-	h2 {
 
-	}
+// CITY PROFILE SECTION
+
+
+#affix{
+  top:80px;
+
+
+  ul {
+    li {
+      width:100%;
+    }
+  }
+
+}
+
+.subindices {
+
+  .main{
+    padding:20px 40px;
+  }
+
+  &:not(first){
+    // box-shadow: 0px 0px 10px #000;
+    border-top: 1px #2e2e2e solid;
+  }
+  
+  // padding: 30px 40px 50px 40px ;
+
+  h2 {
+        color:white;
+        font-family:"Raleway", sans-serif;
+        font-weight:200;
+        text-shadow:1px 1px 2px #2e2e2e;
+
+      }
+
+  &#air {   
+  
+      background-color:#BEE7F2;
+
+    }
+
+  &#water{
+    
+      background-color:#00A1EF;
+  }
+
+  &#earth{
+
+    background-color:#63CE0A;
+
+  }
+
+  &#waste{
+
+    background-color:#474747;
+
+  }
+
+  &#construction{
+
+
+
+  }
+
+.bs-sidenav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f7f5fa;
+  border-radius: 5px;
+}x
+
+  &#energy{
+    background-color:#FAEE40;
+  }
+
+
+
+  .indicators{
+
+      // border-top: 1px #2e2e2e solid;
+      margin-top:20px;
+      text-align:center;
+      font-size:12px;
+
+      h4{
+        font-size:12px;
+      }
+
+      "div:gt(0)"{
+        border-left: 1px #2e2e2e solid;
+      }
+
+
+      p {
+        visibility:hidden;
+      }
+
+
+  }
 
 
 }
 
+.profile-sidebar{
+    padding: 0px;
+    
+    .profile-sidebar-slider{
+        width: 100%;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        background: #eef;
+    }
+}
 
 .background-video {
 	/*position: absolute;*/

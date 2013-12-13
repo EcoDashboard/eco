@@ -216,6 +216,126 @@ table.tablesorter thead tr th:hover {
 	white-space: normal;
 	}
 
-	/* Indicators Input Page Styles*/
+	
+	/** Individual sub-insex pages **/
+	div.index-page{
+		h1{
+			color: #FFF;
+			padding: 5px;
+			border-radius: 5px;
+			text-shadow:1px 1px 2px #2e2e2e;
+		}
+		small{
+			color: #ddd;
+		}
+	/* Water Index Page */
+		&.water-index{
+			h1{
+				background: #00A1EF;
+			}
+			i.fa-tint{
+				color: #00F;
+			}
+		}
+		
+	/* .Water Index Page */
+	}
+	/** .Individual sub-insex pages **/
+	
+	
+	/* Indicators Input Page Styles */
+	
+	.indicators-form{
+		border: 2px solid #999;
+		border-radius: 10px;
+		padding: 3px;
+		margin-top: 6px;
+		
+		.panel-heading{
+			padding: 0px;
+			margin: 2px 2px 2px 2px;
+		}
+		
+		a.indicator-collapse-button{
+			display: block;
+			width: 100%;
+			border-radius: 9px;
+			color: #000;
+			padding: 5px 5px 5px 10px;
+			margin: 0;
+		}
+		a.indicator-collapse-button:hover{
+			text-decoration: none;
+		}
+		
+		h2{
+			color: #FFF;
+			padding: 0px;
+			margin: 0px;
+			text-shadow:1px 1px 2px #2e2e2e;
+		}
+		
+		form{
+			margin-top: 10px;
+		}
+		
+		&.submit-all{
+			display: block;
+			border: 1px solid #f4f4f4;
+			border-radius: 5px;
+			background: #f4f4f4;
+			margin-top: 10px;
+			padding: 8px 10px;
+		}
+		
+		&#water{
+			border-color: #66CCFF;
+			i{
+				color: #00F;
+			}
+			a.indicator-collapse-button{
+				background: #00A1EF;
+			}
+		}
+		
+		&#air{
+			border-color: #BEE7F2;
+			i{
+				color: #FFF;
+			}
+			a.indicator-collapse-button{
+				background: #BEE7F2;
+			}
+		}
+		
+		&#land{
+			border-color: #63CE0A;
+			i{
+				color: #0F0;
+			}
+			a.indicator-collapse-button{
+				background: #63CE0A;
+			}
+		}
+		&#waste{
+			border-color: #2E2E2E;
+			i{
+				color: #999;
+			}
+			a.indicator-collapse-button{
+				background: #2E2E2E;
+			}
+		}
+		&#energy{
+			border-color: #FAEE40;
+			i{
+				color: #FFCC00;
+			}
+			a.indicator-collapse-button{
+				background: #FAEE40;
+			}
+		}
+	}
 
+	/* .Indicators Input Page Styles*/
 }
