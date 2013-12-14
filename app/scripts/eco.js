@@ -38,10 +38,10 @@ app.config(['$routeProvider',
       	templateUrl: 'howitworks.html',
       	controller: 'worksCtrl'
       }).
-      when('/dashboard',{
-      	templateUrl: 'dashboard.html',
-      	controller: 'dashboardCtrl'
-      }).
+      // when('/dashboard',{
+      // 	templateUrl: 'dashboard.html',
+      // 	controller: 'dashboardCtrl'
+      // }).
       otherwise({
         redirectTo: '/'
       });
@@ -167,12 +167,12 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 		};
 
 
-   		$('.indicators div').hover(
+   		$('.indicators').hover(
     	function(d){
     		console.log(d.target);
-    		$(d.target).closest('.indicators').find('.row.collapse').collapse('show');
+    		$(d.target).find('.row.collapse').collapse('show');
     	},function(d){
-    		$(d.target).closest('.indicators').find('.row.in').collapse('hide');
+    		$(d.target).find('.row.in').collapse('hoveride');
     	}); 
 
 
@@ -193,8 +193,8 @@ app.controller('aboutUsCtrl', ['$scope', function($scope){
 
 }]);
 
-app.controller('dashboardCtrl', ['$scope', function($scope){
+// app.controller('dashboardCtrl', ['$scope', function($scope){
 
-	console.log("Wat wat");
+// 	console.log("Wat wat");
 
-}]);
+// }]);
