@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+$(function(){ 
+	
+});
+=======
 var app = angular.module('eco-dashboard', [ 'ngRoute' ,'tc.chartjs' ]);
 
 app.config(['$routeProvider', function($routeProvider) {
@@ -41,3 +46,4 @@ app.controller('dashboardCtrl', ['$scope', function($scope){
 
 
 
+>>>>>>> d720861d7b6fa1d49680c7f0aebb248e1645ccda
