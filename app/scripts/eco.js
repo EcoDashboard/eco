@@ -38,10 +38,6 @@ app.config(['$routeProvider',
       	templateUrl: 'howitworks.html',
       	controller: 'worksCtrl'
       }).
-      // when('/dashboard',{
-      // 	templateUrl: 'dashboard.html',
-      // 	controller: 'dashboardCtrl'
-      // }).
       otherwise({
         redirectTo: '/'
       });
