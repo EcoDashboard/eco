@@ -162,14 +162,14 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 			segmentShowStroke: false
 		};
 
-
+		console.log($('.collapse').collapse)
    		$('.indicators').hover(
-    	function(d){
-    		console.log(d.target);
-    		$(d.target).find('.row.collapse').collapse('show');
-    	},function(d){
-    		$(d.target).find('.row.in').collapse('hoveride');
-    	}); 
+		  function(d){
+		  	console.log(d.target);
+			$(d.target).closest('.indicators').find('.collapse').collapse('show');
+		},function(d){
+			$(d.target).closest('.indicators').find('.in').collapse('hide');
+		}); 
 
 
 
