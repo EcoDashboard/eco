@@ -57,8 +57,8 @@
                 <li><a href="report_land.html"><i class="fa fa-leaf"></i>&nbsp;&nbsp;Land Report</a></li>
                 <li><a href="report_air.html"><i class="fa fa-cloud"></i>&nbsp;&nbsp;Air Reports</a></li>
                 <li><a href="report_waste.html"><i class="fa fa-trash-o"></i>&nbsp;&nbsp;Waste Report</a></li>
-				<li><a href="report_construstion.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Construction Report</a></li>
-				<li><a href="report_energy.html"><i class="fa fa-bolt"></i>&nbsp;&nbsp;Energy Report</a></li>
+				<!--<li><a href="report_construstion.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Construction Report</a></li>-->
+					<li><a href="report_energy.html"><i class="fa fa-bolt"></i>&nbsp;&nbsp;Energy Report</a></li>
 				<!--<li><a href="#"><i class="fa fa-bug"></i>&nbsp;&nbsp;Bio Report</a></li>-->
               </ul>
             <li><a href="projects.html"><i class="fa fa-tasks"></i>&nbsp;EcoProjects</a></li>
@@ -144,37 +144,49 @@
 		<div class="row data-line final-index"><!-- row -->
 			<div class="col-lg-12">
 				<div class="row main">
-                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="final_index" chart-options="chart_options"  width="250" height="250"></canvas>
+                    <img class="img-circle img-responsive pull-right" src="images/round_index.png">
                     <h2 class="featurette-heading"><i class="fa fa-pagelines"></i> Final Index</h2>
                     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-                </div>
+            </div>
 			</div>
 			<!-- Sub Indescies -->
 			<div class="col-lg-12">
 				<ul class="nav nav-tabs">
 					<li><a href="#air-tab" data-toggle="tab">
 						<span><i class="fa fa-cloud"></i> Air Index<span>
-						<img class="img-circle img-responsive pull-right" src="images/round_index.png" style="height: 50px;width:50px;">
+						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 50px;width:50px;">
 					</a></li>
 					<li><a href="#water-tab" data-toggle="tab">
 						<span><i class="fa fa-tint"></i> Water Index</span>
-						<img class="img-circle img-responsive pull-right" src="images/round_index.png" style="height: 50px;width:50px;">
+						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 50px;width:50px;">
 					</a></li>
 					<li><a href="#land-tab" data-toggle="tab">
 						<span><i class="fa fa-leaf"></i> Land Index</span>
-						<img class="img-circle img-responsive pull-right" src="images/round_index.png" style="height: 50px;width:50px;">
+						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 50px;width:50px;">
 					</a></li>
 					<li><a href="#waste-tab" data-toggle="tab">
 						<span><i class="fa fa-trash-o"></i> Waste Index</span>
-						<img class="img-circle img-responsive pull-right" src="images/round_index.png" style="height: 50px;width:50px;">
+						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 50px;width:50px;">
 					</a></li>
 					<li><a href="#waste-tab" data-toggle="tab">
 						<span><i class="fa fa-bolt"></i> Energy Index</span>
-						<img class="img-circle img-responsive pull-right" src="images/round_index.png" style="height: 50px;width:50px;">
+						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 50px;width:50px;">
 					</a></li>
 				</ul>
 				<div class="tab-content">
-					<div class="tab-pane active" id="air-tab">AIR TAB</div>
+					<div class="tab-pane" id="air-tab"> 
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="line">
+									<img class="img-circle img-responsive pull-left" src="images/round_index.png" style="height: 50px;width:50px;">
+									<span>CO2</span>
+								</div>	
+							</div>
+							<div class="col-xs-6">
+							sssssss
+							</div>
+						</div>					
+					</div>
 					<div class="tab-pane" id="water-tab">WATER TAB</div>
 					<div class="tab-pane" id="land-tab">LAND TAB</div>
 					<div class="tab-pane" id="waste-tab">Wate TAB</div>
@@ -183,6 +195,8 @@
 			<!-- /. Sub Indescies -->
 		</div><!-- /.row -->
 		<!-- /. Final Index -->
+		
+		<!-- Best Perfomance Index -->
 		<div class="row data-line"><!-- row -->
 			<div class="col-lg-12">
 				<div class="row main">
@@ -204,17 +218,5 @@
       </div><!-- /#page-wrapper -->
 
     </div><!-- /#wrapper -->
-
-    <!-- JavaScript -->
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="bower_components\bootstrap\dist\js\bootstrap.js"></script>
-
-    <!-- Page Specific Plugins -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-    <!--<script src="js/morris/chart-data-morris.js"></script>
-    <script src="js/tablesorter/jquery.tablesorter.js"></script>
-    <script src="js/tablesorter/tables.js"></script>-->
-
   </body>
 </html>
