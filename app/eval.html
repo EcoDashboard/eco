@@ -1,17 +1,5 @@
 <div class="row">
-          <div class="col-lg-12">
-            <h1>Full EcoReport <small>Complete Evaluation</small></h1>
-            <ol class="breadcrumb">
-              <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
-            </ol>
-            <div class="alert alert-success alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <p>Welcome to the EcoDashboard.</p>
-            </div>
-          </div>
-        </div><!-- /.row -->
-
-       
+   
       <div id="page-wrapper" class="index-page final-index">
 
         <div class="row">
@@ -27,8 +15,8 @@
 		<div class="row data-line final-index"><!-- row -->
 			<div class="col-lg-12">
 				<div class="row main">
-                    <img class="img-circle img-responsive pull-right" src="images/round_index.png">
-                    <h2 class="featurette-heading"><i class="fa fa-pagelines"></i> Final Index</h2>
+                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="final_donut" chart-options="chart_options"  width="250" height="250"></canvas>
+                    <h2 class="featurette-heading"><i class="fa fa-pagelines"></i> Final Index: <span class="score">78</span></h2>
                     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
             </div>
 			</div>
@@ -36,39 +24,56 @@
 			<div class="col-lg-12">
 				<ul class="nav nav-tabs">
 					<li><a ng-href="#air-tab" data-toggle="tab">
-						<span><i class="fa fa-cloud"></i> Air Index<span>
-						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 80px;width:80px;">
+						<span><i class="fa fa-cloud"></i> Air Index: </span><span class="score">67</span><br>
+						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="air_donut" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
 					<li><a ng-href="#water-tab" data-toggle="tab">
-						<span><i class="fa fa-tint"></i> Water Index</span>
-						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 80px;width:80px;">
+						<span><i class="fa fa-tint"></i> Water Index: </span><span class="score">88</span><br>
+						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="water_donut" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
 					<li><a ng-href="#land-tab" data-toggle="tab">
-						<span><i class="fa fa-leaf"></i> Land Index</span>
-						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 80px;width:80px;">
+						<span><i class="fa fa-leaf"></i> Land Index: </span><span class="score">54</span><br>
+						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="land_donut" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
 					<li><a ng-href="#waste-tab" data-toggle="tab">
-						<span><i class="fa fa-trash-o"></i> Waste Index</span>
-						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 80px;width:80px;">
+						<span><i class="fa fa-trash-o"></i> Waste Index: </span><span class="score">83</span><br>
+						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="waste_donut" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
 					<li><a ng-href="#waste-tab" data-toggle="tab">
-						<span><i class="fa fa-bolt"></i> Energy Index</span>
-						<img class="img-circle img-responsive pull-down" src="images/round_index.png" style="height: 80px;width:80px;">
+						<span><i class="fa fa-bolt"></i> Energy Index: </span><span class="score">91</span><br>
+						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="energy_donut" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
 				</ul>
 				<div class="tab-content">
-					<div class="tab-pane" id="air-tab"> 
+					<div class="tab-pane" id="air-tab">
+						<div class="row"><i class="fa fa-cloud"></i><span>&nbsp;Air Indicators</span></div> 
 						<div class="row">
 							<div class="col-xs-6">
 								<div class="line">
-									<img class="img-circle img-responsive pull-left" src="images/round_index.png" style="height: 50px;width:50px;">
-									<span>CO2</span>
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 23%">
+   										<span class="">40% Complete (success)</span>
+										</div>
+									</div>
+								</div>
+								<div class="line">
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 81%">
+   										<span class="">40% Complete (success)</span>
+										</div>
+									</div>
 								</div>	
 							</div>
 							<div class="col-xs-6">
-							sssssss
+								<div class="line">
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 87%">
+   										<span class="sr-only">40% Complete (success)</span>
+										</div>
+									</div>
+								</div>	
 							</div>
-						</div>					
+						</div>			
 					</div>
 					<div class="tab-pane" id="water-tab">WATER TAB</div>
 					<div class="tab-pane" id="land-tab">LAND TAB</div>
@@ -80,22 +85,70 @@
 		<!-- /. Final Index -->
 		
 		<!-- Best Perfomance Index -->
-		<div class="row data-line"><!-- row -->
+		<div class="row data-line best-index"> <!-- row -->
 			<div class="col-lg-12">
 				<div class="row main">
-                    <img class="img-circle img-responsive pull-right" src="images/round_index.png">
+                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="energy_donut" chart-options="chart_options" height="250" width="250"></canvas>
                     <h2 class="featurette-heading"><i class="fa fa-star"></i> Best Perfomance</h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+							<h2><i class="fa fa-bolt"></i> Energy Index: </span><span class="score">91</span></h2>                    
+                     <p>
+                    	 <h3><u>Active project</u></h3>
+                      <label class = "water_report_projects" for="Project-Active" >
+                        <input checked type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px">Energy Quality Project Name 1<br>
+                        <input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Energy Quality Project Name 2<br>
+								<input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Energy Quality Project Name 3<br>
+								<input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Energy Quality Project Name 4                      
+                      </label>
+                    </p>
 				</div>
 			</div>
 		</div><!-- /.row -->
-		<div class="row data-line"><!-- row -->
+		
+		<!-- Worst Perfomance Index -->
+		<div class="row data-line worst-index"><!-- row -->
 			<div class="col-lg-12">
 				<div class="row main">
-                    <img class="img-circle img-responsive pull-right" src="images/round_index.png">
-                    <h2 class="featurette-heading"><i class="fa fa-pagelines"></i> Worst Perfomance</h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="land_donut" chart-options="chart_options" height="250" width="250"></canvas>
+                    <h2 class="featurette-heading"><i class="fa fa-exclamation"></i> Worst Perfomance</h2>
+							<h2><i class="fa fa-leaf"></i> Land Index: </span><span class="score">54</span></h2>                    
+                    <p>
+                    	 <h3><u>Improvement proposition</u></h3>
+                      <label class = "water_report_projects" for="Project-Active" >
+                        <input type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px">Land Quality Project Name 1<br>
+                        <input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Land Quality Project Name 2<br>
+								<input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Land Quality Project Name 3<br>
+								<input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Land Quality Project Name 4                      
+                      </label>
+                    </p>
                 </div>
 			</div>
 		</div><!-- /.row -->
+		          <div class="row data-line project-line">
+                  <div class="col-lg-12">
+				<div class="row main">
+                 <h2><i class="fa fa-tasks"></i>&nbsp;Projects</h2>
+                </div>
+                </div>
+           <div class="col-lg-12 row">
+              <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3>Active</h3>
+                      <label class = "water_report_projects" for="Project-Active" >
+                        <input checked type="checkbox" name="Project-Active" value="Project 1" style="margin-right:10px">Water Quality Project Name 1<br>
+                        <input checked type="checkbox" name="Project-Active" value="Project 2" style="margin-right:10px">Water Quality Project Name 2
+                      </label>
+                      </div>
+                    <div class="col-xs-6">
+                        <h3>Proposed</h3>
+                      <label class = "water_report_projects" for="Project-Active" >
+                        <input type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px">Water Quality Project Name 1<br>
+                        <input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Water Quality Project Name 2
+                      </label>
+                      </div>
+              </div>
+              </div>
+              </div>  
+              
+           </div> <!-- /.row -->
       </div><!-- /#page-wrapper -->

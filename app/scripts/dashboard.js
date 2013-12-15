@@ -66,7 +66,67 @@ app.config(['$routeProvider', function($routeProvider){
 
 
 app.controller('dashboardCtrl', ['$scope', function($scope){
-
+	
+	$scope.final_donut = [
+        {
+            value: 78,
+            color:"#FFF"
+        },
+        {
+            value: 22,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.air_donut = [
+        {
+            value: 67,
+            color:"#FFF"
+        },
+        {
+            value: 33,
+            color:"#BADEEF"
+        },
+   ]
+	$scope.water_donut = [
+        {
+            value: 88,
+            color:"#FFF"
+        },
+        {
+            value: 12,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.land_donut = [
+        {
+            value: 54,
+            color:"#FFF"
+        },
+        {
+            value: 46,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.waste_donut = [
+        {
+            value: 83,
+            color:"#FFF"
+        },
+        {
+            value: 17,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.energy_donut = [
+        {
+            value: 91,
+            color:"#FFF"
+        },
+        {
+            value: 9,
+            color:"#BADEEF"
+        },
+   ]
 	$scope.chart_options = {
 			percentageInnerCutout : 70,
 			animationSteps : 60,

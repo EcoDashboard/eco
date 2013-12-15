@@ -307,15 +307,27 @@ table.tablesorter thead tr th:hover {
 			border-radius: 10px;
 			margin: 10px 5px 10px 5px;
 			padding: 10px;
-			
-			li img{
-				margin-left: auto;
-				margin-right: auto;
-				margin-top: 4px;	
+			.score{
+					color: red;	
+			}
+			li{
+				canvas{
+					margin: auto;
+				}
+				.score{
+					font-size: 1.3em;	
+				}			
 			}
 			
 			&.final-index{
 				background: #BADEEF;
+			}
+			
+			&.best-index{
+				background: #FBFFC9;		
+			}
+			&.worst-index{
+				background: #FAD2D2;	
 			}
 			.nav{
 				background: none;
@@ -326,7 +338,7 @@ table.tablesorter thead tr th:hover {
 					}
 				}
 				a{
-					font-size: 2em;
+					font-size: 1.3em;
 					color: #555;
 					border: 0px;
 					border-radius: 0px;
@@ -356,8 +368,9 @@ table.tablesorter thead tr th:hover {
 			}
 			i.fa-pagelines{
 				color: #0F0;	
-			}
+			}	
 		}
+
 	/* .Final Indes Page */
 	/* Water Index Page */
 		&.water-index{
