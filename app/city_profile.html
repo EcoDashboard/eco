@@ -13,18 +13,17 @@
     <div class="row">
       <div class="col-md-2 visible-lg visible-md hidden-sm hidden-xs city-profile-side-menu">
         <!-- data-spy="affix" data-offset-top="300" data-offset-bottom="250"> -->
-        <div class="affix">
-              <ul class="nav">
-                <li><a  id="airair" href="#air">Air</a></li> 
-                <li><a  id="airair" href="#water">Water</a></li>
-                <li><a  id="airair" href="#earth">Earth</a></li>
-                <li><a  id="airair" href="#waste">Waste</a></li>
-                <li><a  id="airair" href="#energy">Energy</a></li>
+        <div id="affix_menu" class="affix">
+              <ul id="city_affix" class="nav">
+                <li><a class="air" ng-href="#air" href="">Air</a></li> 
+                <li><a class="water" ng-href="#water" href="">Water</a></li>
+                <li><a class="earth" ng-href="#earth" href="">Earth</a></li>
+                <li><a class="waste" ng-href="#waste" href="">Waste</a></li>
+                <li><a class="energy" ng-href="#energy" href="">Energy</a></li>
               </ul>
           </div>
         </div>
 
-<!-- //<<<<<<< HEAD -->
          <div class="col-md-10 col-xs-12">
   <!-- START THE ELEMENTS http://www.colourlovers.com/palette/2365175/The_Elements -->
   
@@ -253,11 +252,8 @@
 <script type="text/javascript">
  $('.affix').affix({
     offset: {
-      top: 290
-
-//        function () {
-  //      return (this.bottom = $('.bs-footer').outerHeight(true))
-//      }
+      top: 290,
+      bottom: 100
     }
   })
  
