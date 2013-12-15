@@ -8,6 +8,12 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl:'eval.html',
 		controller: 'dashboardCtrl'
 	}).
+<<<<<<< HEAD
+	when('/waterreport',{
+		templateUrl:'report-water.html',
+		controller: 'waterCtrl'	
+	}).
+=======
     when('/projects', { //   #/projects
         templateUrl:'projects.html',
         controller: 'projectsCtrl'
@@ -20,6 +26,7 @@ app.config(['$routeProvider', function($routeProvider) {
     //     templateUrl:'complete-eval.html',
     //     controller: 'dashboardCtrl'
     // }).
+>>>>>>> 4babf717c4996e98826430c7c1197c44188fd46a
 	otherwise({
         redirectTo: '/dashboard'
       });
