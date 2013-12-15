@@ -13,7 +13,7 @@ app.config(['$routeProvider',
         controller: 'cityProfileCtrl'
       }).
       when('/about-us', {
-        templateUrl: 'aboutus.html',
+        templateUrl: 'round-about.html',
         controller: 'aboutUsCtrl'
       }).
       when('/how-it-works', {
