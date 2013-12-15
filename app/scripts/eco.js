@@ -1,5 +1,5 @@
 
-var app = angular.module('eco', [ 'ngRoute' ]);
+var app = angular.module('eco', [ 'ngRoute' ,'tc.chartjs' ]);
  
 // app.config(['$compileProvider', function ($compileProvider){
 //   // Needed for routing to work
@@ -38,10 +38,6 @@ app.config(['$routeProvider',
       	templateUrl: 'howitworks.html',
       	controller: 'worksCtrl'
       }).
-      when('/dashboard',{
-      	templateUrl: 'dashboard.html',
-      	controller: 'dashboardCtrl'
-      }).
       otherwise({
         redirectTo: '/'
       });
@@ -60,7 +56,14 @@ app.factory('City', ['$http', function($http){
 				"country_name"   : "United States",
 				"email"		     : "daniel@seattle.org",
 				"contact_number" : "12065558050",
-				"council_address": "1st Ave, Seattle WA 98105"
+				"council_address": "1st Ave, Seattle WA 98105",
+				"index_data" : {
+					"air_index": 65,
+					"water_index": 88,
+					"earth_index": 45,
+					"waste_index": 99,
+					"energy_index": 33
+				}
 			}
 	);
 
@@ -126,19 +129,57 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 	city = City.get($routeParams.cityId);
 
 	console.log("cityId "+ $routeParams.cityId);
-	console.log(city);
+
+	colors = {
+		'air'   : '#BEE7F2',
+		'water' : "#00A1EF",
+		'earth' : "#63CE0A",
+		'waste' : "#a1a1a1",
+		'energy': "#FAEE40"
+	};
+
 
 	if (city != null){
 
 		$scope.city = city;
-		// $scope.city_name = city.city_name;
-		// $scope.city_id = city.city_id;
+		
+		//ELEMENT DATA SETUP 
+		for( var d in city.index_data) {
+
+			console.log(city.index_data[d]);
+			o = [
+				{value : city.index_data[d], color : '#fff'},
+				{value : 100 - city.index_data[d], color : colors[d.split("_")[0]]}
+			]
+			$scope[d] = o;
+		}
+
+		$scope.chart_options = {
+			percentageInnerCutout : 70,
+			animationSteps : 60,
+			animationEasing : "easeOutCubic",
+			// animateScale : true,
+			segmentShowStroke: false
+		};
+
+		console.log($('.collapse').collapse)
+   		$('.indicators').hover(
+		  function(d){
+		  	console.log(d.target);
+			$(d.target).closest('.indicators').find('.collapse').collapse('show');
+		},function(d){
+			$(d.target).closest('.indicators').find('.in').collapse('hide');
+		}); 
+
+
 
 	} else {
 
 		$location.path('/');
 
 	}
+
+	
 	
 }]);
 
@@ -147,3 +188,9 @@ app.controller('aboutUsCtrl', ['$scope', function($scope){
 	console.log("Wat wat");
 
 }]);
+
+// app.controller('dashboardCtrl', ['$scope', function($scope){
+
+// 	console.log("Wat wat");
+
+// }]);

@@ -70,7 +70,7 @@ body {
 }
 .nav {
 	i.fa-globe{
-		color: #6666FF;
+		color: #468847;
 	}
 	i.fa-tint{
 		color: #00F;
@@ -217,7 +217,8 @@ table.tablesorter thead tr th:hover {
 	}
 
 	
-	/** Individual sub-insex pages **/
+	/** Individual sub-indecsies pages **/
+	/* Final Index Page */
 	div.index-page{
 		h1{
 			color: #FFF;
@@ -228,6 +229,58 @@ table.tablesorter thead tr th:hover {
 		small{
 			color: #ddd;
 		}
+		.data-line{
+			border-radius: 10px;
+			margin: 10px 5px 10px 5px;
+			padding: 10px;
+			
+			canvas.main-chart{
+				height: 250px;
+				width: 250px;
+			}
+			
+			&.final-index{
+				background: #BADEEF;
+			}
+			.nav{
+				background: none;
+				li.active{
+					background: #cbe4ef;
+					a{
+						background: none;
+					}
+				}
+				a{
+					font-size: 1.3em;
+					color: #555;
+					border: 0px;
+					border-radius: 0px;
+				}
+				a:hover {
+					text-decoration: none;
+					background: none;
+					
+				}
+				span{
+					text-shadow:1px 1px 2px #7e7e7e;
+				}
+			}
+			.tab-content{
+				.active{
+					background: #cbe4ef;
+				}
+			}
+		}
+		
+		&.final-index{
+			h1{
+				background: #DFF0DF;
+			}
+			i.fa-globe{
+				color: #468847;
+			}
+		}
+	/* .Final Indes Page */
 	/* Water Index Page */
 		&.water-index{
 			h1{
@@ -240,7 +293,7 @@ table.tablesorter thead tr th:hover {
 		
 	/* .Water Index Page */
 	}
-	/** .Individual sub-insex pages **/
+	/** .Individual sub-indecsies pages **/
 	
 	
 	/* Indicators Input Page Styles */
