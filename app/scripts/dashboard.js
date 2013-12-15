@@ -8,6 +8,10 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl:'complete-eval.html',
 		controller: 'dashboardCtrl'
 	}).
+	when('/waterreport',{
+		templateUrl:'report-water.html',
+		controller: 'waterCtrl'	
+	}).
 	otherwise({
         redirectTo: '/'
       });
