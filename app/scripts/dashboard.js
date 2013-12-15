@@ -8,25 +8,27 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl:'eval.html',
 		controller: 'dashboardCtrl'
 	}).
-<<<<<<< HEAD
-	when('/waterreport',{
+	when('/water',{
 		templateUrl:'report-water.html',
 		controller: 'waterCtrl'	
 	}).
-=======
-    when('/projects', { //   #/projects
-        templateUrl:'projects.html',
-        controller: 'projectsCtrl'
-    }).
-    // when('/data', { //   #/data
-    //     templateUrl:'data.html',
-    //     controller: 'dataCtrl'
-    // }).
-    // when('/options', { //   #/options
-    //     templateUrl:'complete-eval.html',
-    //     controller: 'dashboardCtrl'
-    // }).
->>>>>>> 4babf717c4996e98826430c7c1197c44188fd46a
+	when('/air',{
+		templateUrl:'report-air.html',
+		controller: 'airCtrl'	
+	}).
+   when('/projects', { //   #/projects
+       templateUrl:'projects.html',
+       controller: 'projectsCtrl'
+   }).
+   when('/data', { //   #/data
+        templateUrl:'data.html',
+        controller: 'dataCtrl'
+   }).
+   when('/options', { //   #/options
+        templateUrl:'complete-eval.html',
+        controller: 'dashboardCtrl'
+   }).
+
 	otherwise({
         redirectTo: '/dashboard'
       });
