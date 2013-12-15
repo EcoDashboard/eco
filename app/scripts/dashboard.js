@@ -10,23 +10,23 @@ app.config(['$routeProvider', function($routeProvider){
 	}).
 
 	when('/water',{
-		templateUrl:'report-water.html',
+		templateUrl:'report_water.html',
 		controller: 'waterCtrl'	
 	}).
 	when('/air',{
-		templateUrl:'report-air.html',
+		templateUrl:'report_air.html',
 		controller: 'airCtrl'	
 	}).
 	when('/land',{
-		templateUrl:'report-land.html',
+		templateUrl:'report_land.html',
 		controller: 'landCtrl'	
 	}).
 	when('/waste',{
-		templateUrl:'report-waste.html',
+		templateUrl:'report_waste.html',
 		controller: 'wasteCtrl'	
 	}).
 	when('/energy',{
-		templateUrl:'report-energy.html',
+		templateUrl:'report_energy.html',
 		controller: 'energyCtrl'	
 	}).
    when('/projects', { //   #/projects
@@ -67,10 +67,6 @@ app.config(['$routeProvider', function($routeProvider){
 
 app.controller('dashboardCtrl', ['$scope', function($scope){
 
-    $scope.onClickFunction = function(parameter){
-        //ng-click="onClickFunction()"
-    }
-
 	$scope.chart_options = {
 			percentageInnerCutout : 70,
 			animationSteps : 60,
@@ -78,15 +74,22 @@ app.controller('dashboardCtrl', ['$scope', function($scope){
 			// animateScale : true,
 			segmentShowStroke: false
 	};	
-	console.log("Wat wat");
-
+	console.log("Main Dashboard");
 }]);
 
 app.controller('waterCtrl', ['$scope', function($scope){
 
-    $scope.onClickFunction = function(parameter){
-        //ng-click="onClickFunction()"
-    }
+	$scope.chart_options = {
+			percentageInnerCutout : 70,
+			animationSteps : 60,
+			animationEasing : "easeOutCubic",
+			// animateScale : true,
+			segmentShowStroke: false
+	};	
+	console.log("WaterReport");
+
+}]);
+app.controller('airCtrl', ['$scope', function($scope){
 
 	$scope.chart_options = {
 			percentageInnerCutout : 70,
@@ -95,15 +98,62 @@ app.controller('waterCtrl', ['$scope', function($scope){
 			// animateScale : true,
 			segmentShowStroke: false
 	};	
-	console.log("Wat wat");
+	console.log("AirReport");
+
+}]);
+app.controller('landCtrl', ['$scope', function($scope){
+
+	$scope.chart_options = {
+			percentageInnerCutout : 70,
+			animationSteps : 60,
+			animationEasing : "easeOutCubic",
+			// animateScale : true,
+			segmentShowStroke: false
+	};	
+	console.log("LandReport");
+
+}]);
+
+app.controller('wasteCtrl', ['$scope', function($scope){
+
+	$scope.chart_options = {
+			percentageInnerCutout : 70,
+			animationSteps : 60,
+			animationEasing : "easeOutCubic",
+			// animateScale : true,
+			segmentShowStroke: false
+	};	
+	console.log("WasteReport");
+
+}]);
+
+app.controller('energyCtrl', ['$scope', function($scope){
+
+	$scope.chart_options = {
+			percentageInnerCutout : 70,
+			animationSteps : 60,
+			animationEasing : "easeOutCubic",
+			// animateScale : true,
+			segmentShowStroke: false
+	};	
+	console.log("EnergyReport");
 
 }]);
 
 app.controller('projectsCtrl', ['$scope', function($scope){
 
-    $scope.onClickFunction = function(parameter){
-        //ng-click="onClickFunction()"
-    }
+	$scope.chart_options = {
+			percentageInnerCutout : 70,
+			animationSteps : 60,
+			animationEasing : "easeOutCubic",
+			// animateScale : true,
+			segmentShowStroke: false
+	};	
+	console.log("EnergyReport");
+
+}]);
+
+app.controller('dataCtrl', ['$scope', function($scope){
 
 	$scope.chart_options = {
 			percentageInnerCutout : 70,
@@ -112,6 +162,6 @@ app.controller('projectsCtrl', ['$scope', function($scope){
 			// animateScale : true,
 			segmentShowStroke: false
 	};	
-	console.log("Wat wat");
+	console.log("EnergyReport");
 
 }]);
