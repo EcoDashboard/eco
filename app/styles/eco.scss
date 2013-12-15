@@ -24,7 +24,8 @@
 /* END HOW IT WORKS */
 
 
-<<<<<<< HEAD
+//<<<<<<< 
+//HEAD
 .affix{
   
   //  top:290px;
@@ -39,7 +40,7 @@
 
 }
 
-=======
+//=======
 // CITY PROFILE SECTION
 
 #affix {
@@ -51,7 +52,8 @@
   li:eq(n+1){
     border-top:1px #a1a1a1;
   }
->>>>>>> b2b3acda59a9c946b88651c1651c0ce9bfc91c12
+}
+//>>>>>>> b2b3acda59a9c946b88651c1651c0ce9bfc91c12
 
 .affix-top{
 //    padding:25px;
@@ -59,7 +61,7 @@
 //width:auto;
 }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 #airair
 {
@@ -84,9 +86,9 @@ text-align:center;
 //}
 
 
-.subindices {
-=======
->>>>>>> b2b3acda59a9c946b88651c1651c0ce9bfc91c12
+//.subindices {
+//=======
+//>>>>>>> b2b3acda59a9c946b88651c1651c0ce9bfc91c12
 
 .subindices {
 
@@ -235,6 +237,7 @@ text-align:center;
 	overflow: hidden;
 	padding: 0;
 }
+
 .background-video video {
   position: absolute;
   top: 0;
@@ -266,11 +269,13 @@ text-align:center;
   transition-delay: 0;
 }
 
+
 // @media (max-width: 599px) {
 //   .background-video video {
 //     display: none;
 //   }
 // }
+
 /*.static-container {
 	position: relative;
 	z-index: 1;
