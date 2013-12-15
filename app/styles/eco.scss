@@ -25,68 +25,66 @@
 
 
 
-//<<<<<<< 
-//HEAD
-.city-profile-side-menu{
-    padding: 0px 0.5em 0px 0px;
-   // background: #0F0;
-}
-.affix{
 
-    position:fixed;
-   padding: 0px 0.220em 0px 0px;
-    top:290px;
-    width: 16.66%;
+.air {
+  color:#BEE7F2
 }
+.earth{
+  color:#63CE0A
+}
+.water{
+  color:#00A1EF
+}
+.waste{
+  color:#a1a1a1
+}
+.energy{
+  color:#FAEE40
+}
+
+
+
 
 //=======
 // CITY PROFILE SECTION
 
-/* #affix {
-  margin:5px;
-  padding: 10px 25px;
-  // background-color:#a1a1a1;
-  // box-shadow: 0px 0px 3px #a1a1a1;
 
-  li:eq(n+1){
-    border-top:1px #a1a1a1;
-  }
-} */
-//>>>>>>> b2b3acda59a9c946b88651c1651c0ce9bfc91c12
-
-.affix-top{
+#affix_menu {
+  color:#a1a1a1;
+  width:100%;
+  font-size: 20px;
+  font-family: Raleway;
+  
+  &.affix {
     margin: 0px;
-    width: 100%;
+    padding: 10px 25px;
+    top:260px;
+    // background-color:#a1a1a1;
+    // box-shadow: 0px 0px 3px #a1a1a1;
+  }
+
+  &.affix-top{
+      margin: 0px;
+      width: 100%;
+      padding: 10px 25px
+  }
 }
 
-//<<<<<<< HEAD
-
-#airair
-{
-margin-bottom:4px;
-background-color:#E3CEF6;
-font-size:1.5em;
-color: #4B8A08;
-font-weight:bold;
-//text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
-font-family:sans-serif;
-font-synthesis:weight;
-text-align:center;
-}
-
-//.affix { position: fixed; top: 150px; bottom: auto; }
-//.affix-bottom { position: fixed; top: auto; bottom: 595px; }
-
-//.other-awesome-affix-styles {
-//    margin-top: 19px;
-//    margin-bottom: 19px;
-//    border: 1px solid #999; /* =2 for top and bottom */
-//}
 
 
-//.subindices {
-//=======
-//>>>>>>> b2b3acda59a9c946b88651c1651c0ce9bfc91c12
+// #airair
+// {
+// margin-bottom:4px;
+// background-color:#E3CEF6;
+// font-size:1.5em;
+// color: #4B8A08;
+// font-weight:bold;
+// //text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+// font-family:sans-serif;
+// font-synthesis:weight;
+// text-align:center;
+// }
+
 
 .subindices {
 
