@@ -24,18 +24,19 @@
 /* END HOW IT WORKS */
 
 
+
 //<<<<<<< 
 //HEAD
+.city-profile-side-menu{
+    padding: 0px 0.5em 0px 0px;
+   // background: #0F0;
+}
 .affix{
 
     position:fixed;
-   
-      top:290px;
-   
-
-    width:inherit;
-
-
+   padding: 0px 0.220em 0px 0px;
+    top:290px;
+    width: 16.66%;
 }
 
 //=======
@@ -54,19 +55,18 @@
 //>>>>>>> b2b3acda59a9c946b88651c1651c0ce9bfc91c12
 
 .affix-top{
-    //padding:25px;
-    //top:290px;
-//width:auto;
+    margin: 0px;
+    width: 100%;
 }
 
 //<<<<<<< HEAD
 
 #airair
 {
-margin-bottom:12px;
-background-color:grey;
-
-color: white;
+margin-bottom:4px;
+background-color:#E3CEF6;
+font-size:1.5em;
+color: #4B8A08;
 font-weight:bold;
 //text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
 font-family:sans-serif;
