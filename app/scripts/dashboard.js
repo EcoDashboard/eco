@@ -4,17 +4,33 @@ var app = angular.module('eco-dashboard', [ 'ngRoute' ,'tc.chartjs' ]);
 app.config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider.
-	when('/dashboard', {
-		templateUrl:'complete-eval.html',
+	when('/dashboard', { //   #/dashboard
+		templateUrl:'eval.html',
 		controller: 'dashboardCtrl'
 	}).
+    when('/projects', { //   #/projects
+        templateUrl:'projects.html',
+        controller: 'projectsCtrl'
+    }).
+    // when('/data', { //   #/data
+    //     templateUrl:'data.html',
+    //     controller: 'dataCtrl'
+    // }).
+    // when('/options', { //   #/options
+    //     templateUrl:'complete-eval.html',
+    //     controller: 'dashboardCtrl'
+    // }).
 	otherwise({
-        redirectTo: '/'
+        redirectTo: '/dashboard'
       });
   }]);
 
 
 app.controller('dashboardCtrl', ['$scope', function($scope){
+
+    $scope.onClickFunction = function(parameter){
+        //ng-click="onClickFunction()"
+    }
 
 	$scope.chart_options = {
 			percentageInnerCutout : 70,
