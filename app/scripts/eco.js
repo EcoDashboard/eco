@@ -161,8 +161,41 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 
 	}
 
-	
-	
+	//On-page animation (by jQuery)
+	$(document).ready(function(){
+
+		//scrolling to a sub-index block
+		$("#affix_menu li").click(function(){
+			$.easing.power = function(t, millisecondsSince, startValue, endValue, totalDuration) {
+    			return Math.pow(t,3);
+			};
+
+			event.preventDefault();
+			$('html, body').animate({
+    				scrollTop: $($(this).find("a").attr("href")).offset().top-100
+ 				}, 
+ 				1500,
+ 				'power'
+ 			);
+		});
+
+		//Showing only out of screen objects in navigation menu
+		$(window).scroll(function(){
+			$(".subindices").each(function(){
+				var blockTop = $(this).offset().top + $(this).height()*0.25;
+				var blockBottom = blockTop+$(this).height()*0.75;
+				var windowTop = $(document).scrollTop();
+				var windowBottom = windowTop+$(window).height();
+				var $menuObject = $("#affix_menu ."+$(this).attr("id"));		//menu object related to the current block
+				if(blockTop >= windowTop & blockBottom <= windowBottom){		//if block on screen
+					$menuObject.fadeOut();
+				} else {														//if block off screen
+					$menuObject.fadeIn();
+				}
+			});
+		});		
+	});
+	// .On-page animation
 }]);
 
 app.controller('aboutUsCtrl', ['$scope', function($scope){
