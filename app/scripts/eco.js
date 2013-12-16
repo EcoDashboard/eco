@@ -183,7 +183,7 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 		$(window).scroll(function(){
 			$(".subindices").each(function(){
 				var blockTop = $(this).offset().top + $(this).height()*0.25;
-				var blockBottom = blockTop+$(this).height()*0.75;
+				var blockBottom = blockTop+$(this).height()*0.6;
 				var windowTop = $(document).scrollTop();
 				var windowBottom = windowTop+$(window).height();
 				var $menuObject = $("#affix_menu ."+$(this).attr("id"));		//menu object related to the current block
