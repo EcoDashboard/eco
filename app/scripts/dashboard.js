@@ -34,7 +34,7 @@ app.config(['$routeProvider', function($routeProvider){
        controller: 'projectsCtrl'
    }).
    when('/data', { //   #/data
-        templateUrl:'data.html',
+        templateUrl:'data_input.html',
         controller: 'dataCtrl'
    }).
    when('/options', { //   #/options
