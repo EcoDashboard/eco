@@ -43,7 +43,7 @@ app.factory('City', ['$http', function($http){
 					"final_index": 66,
 					"air_index": 65,
 					"water_index": 88,
-					"earth_index": 45,
+					"land_index": 45,
 					"waste_index": 99,
 					"energy_index": 33
 				}
@@ -113,14 +113,14 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 
 	console.log("cityId "+ $routeParams.cityId);
 
-	colors = {
-		'final' : 'transparent',
-		'air'   : '#BEE7F2',
-		'water' : "#00A1EF",
-		'earth' : "#63CE0A",
-		'waste' : "#a1a1a1",
-		'energy': "#FAEE40"
-	};
+	// colors = {
+	// 	'final' : 'transparent',
+	// 	'air'   : '#BEE7F2',
+	// 	'water' : "#00A1EF",
+	// 	'land' : "#63CE0A",
+	// 	'waste' : "#a1a1a1",
+	// 	'energy': "#FAEE40"
+	// };
 
 
 	if (city != null){

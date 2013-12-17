@@ -273,7 +273,13 @@ window.Chart = function(context){
 			animationEasing : "easeOutBounce",
 			animateRotate : true,
 			animateScale : false,
-			onAnimationComplete : null
+			onAnimationComplete : null,
+
+			/* Text to the chart */
+			labelFontFamily : "Arial",
+        	labelFontStyle : "normal",
+        	labelFontSize : 0.4,			//the persentage to width of canvas
+        	labelFontColor : "#666"
 		};		
 
 		var config = (options)? mergeChartConfig(chart.Doughnut.defaults,options) : chart.Doughnut.defaults;
@@ -753,6 +759,16 @@ window.Chart = function(context){
 		
 		
 		function drawPieSegments (animationDecimal){
+
+			/* Addint the value text in the middle of chart */
+			var textPosition = (width*config.labelFontSize+width*config.labelFontSize/8)/(data[0].value).toString().length; // left coordinate of text on canvas (relative to canvas)
+
+			ctx.font = config.labelFontStyle + " " + (width*config.labelFontSize)+"px " + config.labelFontFamily;
+            ctx.fillStyle = 'black';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(data[0].value, width/2 - textPosition, width/2, width*0.6);
+            /*************************************************/
+
 			var cumulativeAngle = -Math.PI/2,
 			scaleAnimation = 1,
 			rotateAnimation = 1;

@@ -23,6 +23,38 @@ body {
 	padding: 5px 15px;
 }
 
+/* Logos colors */
+i.fa-globe{
+	color: #468847;
+}
+i.fa-tint{
+	color: #00F;
+}
+i.fa-leaf{
+	color: #0F0;
+}
+i.fa-cloud{
+	color: #FFF;
+}
+i.fa-home{
+	color: #CC9933;
+}
+i.fa-bolt{
+	color: #FFF;
+}
+i.fa-bug{
+	color: #993300;
+}
+i.fa-pagelines{
+	color: #0F0;	
+}
+i.fa-star{
+	color: #FAEE40;
+}
+i.fa-exclamation{
+	color: #F00;
+}
+/* .Logos colors */
 /* Nav Messages */
 
 .messages-dropdown .dropdown-menu .message-preview .avatar,
@@ -138,29 +170,6 @@ font-synthesis:weight;
 }
 .navbar-inverse .navbar-nav > li > a {
 	color: #777;
-}
-.nav {
-	i.fa-globe{
-		color: #468847;
-	}
-	i.fa-tint{
-		color: #00F;
-	}
-	i.fa-leaf{
-		color: #0F0;
-	}
-	i.fa-cloud{
-		color: #FFF;
-	}
-	i.fa-home{
-		color: #CC9933;
-	}
-	i.fa-bolt{
-		color: #CCFF00;
-	}
-	i.fa-bug{
-		color: #993300;
-	}
 }
 /* Table Headers */
 
@@ -324,7 +333,7 @@ table.tablesorter thead tr th:hover {
 			}
 			
 			&.best-index{
-				background: #FBFFC9;		
+				background: #faeeb2;		
 			}
 			&.worst-index{
 				background: #FAD2D2;	
@@ -369,12 +378,6 @@ table.tablesorter thead tr th:hover {
 			h1{
 				background: #DFF0DF;
 			}
-			i.fa-globe{
-				color: #468847;
-			}
-			i.fa-pagelines{
-				color: #0F0;	
-			}	
 		}
 
 	/* .Final Indes Page */
@@ -382,9 +385,6 @@ table.tablesorter thead tr th:hover {
 		&.water-index{
 			h1{
 				background: #00A1EF;
-			}
-			i.fa-tint{
-				color: #00F;
 			}
 		}
 		
