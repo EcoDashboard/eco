@@ -40,6 +40,7 @@ app.factory('City', ['$http', function($http){
 				"contact_number" : "12065558050",
 				"council_address": "1st Ave, Seattle WA 98105",
 				"index_data" : {
+					"final_index": 66,
 					"air_index": 65,
 					"water_index": 88,
 					"earth_index": 45,
@@ -113,6 +114,7 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 	console.log("cityId "+ $routeParams.cityId);
 
 	colors = {
+		'final' : 'transparent',
 		'air'   : '#BEE7F2',
 		'water' : "#00A1EF",
 		'earth' : "#63CE0A",
@@ -131,7 +133,7 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 			console.log(city.index_data[d]);
 			o = [
 				{value : city.index_data[d], color : '#fff'},
-				{value : 100 - city.index_data[d], color : colors[d.split("_")[0]]}
+				{value : 100 - city.index_data[d], color : 'transparent'}
 			]
 			$scope[d] = o;
 		}
@@ -161,9 +163,8 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 
 	}
 
-	//On-page animation (by jQuery)
+	//jQuery page control block (animations)
 	$(document).ready(function(){
-
 		//scrolling to a sub-index block
 		$("#affix_menu li").click(function(){
 			$.easing.power = function(t, millisecondsSince, startValue, endValue, totalDuration) {
@@ -195,7 +196,7 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 			});
 		});		
 	});
-	// .On-page animation
+	// .jQuery control block
 }]);
 
 app.controller('aboutUsCtrl', ['$scope', function($scope){
