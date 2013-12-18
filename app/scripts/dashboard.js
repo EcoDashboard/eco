@@ -128,15 +128,38 @@ app.controller('dashboardCtrl', ['City', '$scope', '$location', '$routeParams', 
 	console.log("Main Dashboard");
 }]);
 
-app.controller('waterCtrl', ['$scope', function($scope){
+app.controller('waterCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 
-	$scope.chart_options = {
-			percentageInnerCutout : 70,
-			animationSteps : 60,
-			animationEasing : "easeOutCubic",
-			// animateScale : true,
-			segmentShowStroke: false
-	};	
+	 city = City.get($routeParams.cityId);
+    $scope.city = city;
+    //console.log("cityId "+ $routeParams.cityId);
+    
+    if (city != null){
+
+        //ELEMENT DATA SETUP 
+        for( var d in city.index_data) {
+
+            console.log(city.index_data[d]);
+            o = [
+                {value : city.index_data[d], color : '#fff'},
+                {value : 100 - city.index_data[d], color : 'transparent'}
+            ];
+            $scope[d] = o;
+        }
+    } else {
+
+        $location.path('/');
+
+    }
+    
+    
+    $scope.chart_options = {
+            percentageInnerCutout : 70,
+            animationSteps : 60,
+            animationEasing : "easeOutCubic",
+            // animateScale : true,
+            segmentShowStroke: false
+    };  
 	console.log("WaterReport");
 
 }]);
@@ -254,7 +277,7 @@ app.controller('projectsCtrl', ['$scope', function($scope){
 
 }]);
 
-app.controller('waterCtrl', ['$scope', function($scope){
+app.controller('energyCtrl', ['$scope', function($scope){
 
 	$scope.chart_options = {
 			percentageInnerCutout : 70,

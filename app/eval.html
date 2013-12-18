@@ -23,23 +23,23 @@
 			<!-- Sub Indescies -->
 			<div class="col-lg-12">
 				<ul class="nav nav-tabs">
-					<li><a ng-href="#air-tab" data-toggle="tab">
+					<li><a data-target="#air-tab" data-toggle="tab">
 						<span><i class="fa fa-cloud"></i> Air Index: </span><br>
 						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="air_index" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
-					<li><a ng-href="#water-tab" data-toggle="tab">
+					<li><a data-target="#water-tab" data-toggle="tab">
 						<span><i class="fa fa-tint"></i> Water Index: </span><br>
 						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="water_index" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
-					<li><a ng-href="#land-tab" data-toggle="tab">
+					<li><a data-target="#land-tab" data-toggle="tab">
 						<span><i class="fa fa-leaf"></i> Land Index: </span><br>
 						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="land_index" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
-					<li><a ng-href="#waste-tab" data-toggle="tab">
+					<li><a data-target="#waste-tab" data-toggle="tab">
 						<span><i class="fa fa-trash-o"></i> Waste Index: </span><br>
 						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="waste_index" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
-					<li><a ng-href="#energy-tab" data-toggle="tab">
+					<li><a data-target="#energy-tab" data-toggle="tab">
 						<span><i class="fa fa-bolt"></i> Energy Index: </span><br>
 						<canvas class="pull-down" tc-chartjs chart-type="doughnut" chart-data="energy_index" chart-options="chart_options" height="70" width="70"></canvas>
 					</a></li>
@@ -47,7 +47,7 @@
 				<div class="tab-content">
 					<!-- Air Indicators -->
 					<div class="tab-pane" id="air-tab">
-						<div class="row"><i class="fa fa-cloud"></i><span>&nbsp;Air Indicators</span></div> 
+						<br>
 						<div class="row">
 							<div class="col-xs-6">
 								<div class="line">
@@ -78,7 +78,7 @@
 					</div>
 					<!-- Water Indicators -->
 					<div class="tab-pane" id="water-tab">
-						<div class="row"><i class="fa fa-tint"></i><span>&nbsp;Water Indicators</span></div> 
+						<br>
 						<div class="row">
 							<div class="col-xs-6">
 								<div class="line">
@@ -109,7 +109,7 @@
 					</div>
 					<!-- Land Indicators -->
 					<div class="tab-pane" id="land-tab">
-						<div class="row"><i class="fa fa-leaf"></i><span>&nbsp;Land Indicators</span></div> 
+						<br>
 						<div class="row">
 							<div class="col-xs-6">
 								<div class="line">
@@ -153,7 +153,7 @@
 						</div>
 					</div>
 					<div class="tab-pane" id="waste-tab">
-						<div class="row"><i class="fa fa-trash-o"></i><span>&nbsp;Waste Indicators</span></div> 
+						<br>
 						<div class="row">
 							<div class="col-xs-6">
 								<div class="line">
@@ -190,7 +190,7 @@
 						</div>
 					</div>
 					<div class="tab-pane" id="energy-tab">
-						<div class="row"><i class="fa fa-bolt"></i><span>&nbsp;Energy Indicators</span></div> 
+						<br>
 						<div class="row">
 							<div class="col-xs-6">
 								<div class="line">
@@ -222,16 +222,20 @@
 		<div class="row data-line best-index"> <!-- row -->
 			<div class="col-lg-12">
 				<div class="row main">
-                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="energy_index" chart-options="chart_options" height="250" width="250"></canvas>
+                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="waste_index" chart-options="chart_options" height="250" width="250"></canvas>
                     <h2 class="featurette-heading"><i class="fa fa-star"></i> Best Perfomance</h2>
-							<h2><i class="fa fa-bolt"></i> Energy Index: </span></h2>                    
+							<h2><i class="fa fa-trash-o"></i> Waste Index: </span></h2>                    
                      <p>
                     	 <h3><u>Active project</u></h3>
-                      <label class = "water_report_projects" for="Project-Active" >
-                        <input checked type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px">Energy Quality Project Name 1<br>
-                        <input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Energy Quality Project Name 2<br>
-								<input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Energy Quality Project Name 3<br>
-								<input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Energy Quality Project Name 4                      
+                      <label class = "report-project" for="Project-Active" >
+                        <input checked type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px" id="WP1">
+                        <label for="WP1">Waste Quality Project Name 1</label><br>
+                        <input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px" id="WP2">
+                        <label for="WP2">Waste Quality Project Name 2</label><br>
+						<input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px" id="WP3">
+						<label for="WP3">Waste Quality Project Name 3</label><br>
+						<input checked type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px" id="WP4">
+						<label for="WP4">Waste Quality Project Name 4</label><br>
                       </label>
                     </p>
 				</div>
@@ -242,40 +246,44 @@
 		<div class="row data-line worst-index"><!-- row -->
 			<div class="col-lg-12">
 				<div class="row main">
-                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="land_index" chart-options="chart_options" height="250" width="250"></canvas>
+                    <canvas class="pull-right" tc-chartjs chart-type="doughnut" chart-data="energy_index" chart-options="chart_options" height="250" width="250"></canvas>
                     <h2 class="featurette-heading"><i class="fa fa-exclamation"></i> Low Perfomance</h2>
-							<h2><i class="fa fa-leaf"></i> Land Index: </span></h2>                    
+							<h2><i class="fa fa-bolt"></i> Energy Index: </span></h2>                    
                     <p>
                     	 <h3><u>Improvement proposition</u></h3>
-                      <label class = "water_report_projects" for="Project-Active" >
-                        <input type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px">Land Quality Project Name 1<br>
-                        <input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Land Quality Project Name 2<br>
-								<input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Land Quality Project Name 3<br>
-								<input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Land Quality Project Name 4                      
+                      <label class = "report-project" for="Project-Active" >
+                        <input type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px" id="EP1">
+                        <label for="EP1">Energy Quality Project Name 1</label><br>
+                        <input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px" id="EP2">
+						<label for="EP2">Energy Quality Project Name 2</label><br>
+						<input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px" id="EP3">
+						<label for="EP3">Energy Quality Project Name 3</label><br>
+						<input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px" id="EP4">
+                      	<label for="EP4">Energy Quality Project Name 4</label><br>
                       </label>
                     </p>
                 </div>
 			</div>
 		</div><!-- /.row -->
-		          <div class="row data-line project-line">
-                  <div class="col-lg-12">
+		<div class="row data-line project-line">
+            <div class="col-lg-12">
 				<div class="row main">
-                 <h2><i class="fa fa-tasks"></i>&nbsp;Projects</h2>
+                	<h2><i class="fa fa-tasks"></i>&nbsp;Projects</h2>
                 </div>
-                </div>
-           <div class="col-lg-12 row">
-              <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <h3>Active</h3>
-                      <label class = "water_report_projects" for="Project-Active" >
-                        <input checked type="checkbox" name="Project-Active" value="Project 1" style="margin-right:10px">Water Quality Project Name 1<br>
-                        <input checked type="checkbox" name="Project-Active" value="Project 2" style="margin-right:10px">Water Quality Project Name 2
+            </div>
+           <div class="col-lg-12 row water-projects-wrapper">
+            	<div class="panel-heading">
+                	<div class="row">
+                    	<div class="col-xs-6">
+                        	<h3>Active</h3>
+                      			<label class = "" for="Project-Active" >
+                        		<input checked type="checkbox" name="Project-Active" value="Project 1" style="margin-right:10px">Water Quality Project Name 1<br>
+                       			<input checked type="checkbox" name="Project-Active" value="Project 2" style="margin-right:10px">Water Quality Project Name 2
                       </label>
                       </div>
                     <div class="col-xs-6">
                         <h3>Proposed</h3>
-                      <label class = "water_report_projects" for="Project-Active" >
+                      <label class = "report-project" for="Project-Active" >
                         <input type="checkbox" name="Project-Active" value="Water Project 1" style="margin-right:10px">Water Quality Project Name 1<br>
                         <input type="checkbox" name="Project-Active" value="Water Project 2" style="margin-right:10px">Water Quality Project Name 2
                       </label>
@@ -284,5 +292,5 @@
               </div>
               </div>  
               
-           </div> <!-- /.row -->
+        </div> <!-- /.row -->
       </div><!-- /#page-wrapper -->
