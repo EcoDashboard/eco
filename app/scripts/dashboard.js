@@ -130,7 +130,12 @@ app.controller('dashboardCtrl', ['City', '$scope', '$location', '$routeParams', 
 
 app.controller('waterCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 
-	 city = City.get($routeParams.cityId);
+    /* Navigation Bar setup */
+    //$(".side-nav .active").toggleClass("active");   //remove hughlight from other navigation elements
+    //$(".side-nav .dropdown").addClass("open");      //open side navigation dropdown (with sub-indicies)
+    /************************/
+
+	city = City.get($routeParams.cityId);
     $scope.city = city;
     //console.log("cityId "+ $routeParams.cityId);
     
@@ -163,54 +168,167 @@ app.controller('waterCtrl', ['City', '$scope', '$location', '$routeParams', func
 	console.log("WaterReport");
 
 }]);
-app.controller('airCtrl', ['$scope', function($scope){
+app.controller('airCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 
-	$scope.chart_options = {
-			percentageInnerCutout : 70,
-			animationSteps : 60,
-			animationEasing : "easeOutCubic",
-			// animateScale : true,
-			segmentShowStroke: false
-	};	
-	console.log("AirReport");
+    /* Navigation Bar setup */
+    //$(".side-nav .active").toggleClass("active");   //remove hughlight from other navigation elements
+    //$(".side-nav .dropdown").addClass("open");      //open side navigation dropdown (with sub-indicies)
+    /************************/
+
+    city = City.get($routeParams.cityId);
+    $scope.city = city;
+    //console.log("cityId "+ $routeParams.cityId);
+    
+    if (city != null){
+
+        //ELEMENT DATA SETUP 
+        for( var d in city.index_data) {
+
+            console.log(city.index_data[d]);
+            o = [
+                {value : city.index_data[d], color : '#fff'},
+                {value : 100 - city.index_data[d], color : 'transparent'}
+            ];
+            $scope[d] = o;
+        }
+    } else {
+
+        $location.path('/');
+
+    }
+    
+    
+    $scope.chart_options = {
+            percentageInnerCutout : 70,
+            animationSteps : 60,
+            animationEasing : "easeOutCubic",
+            // animateScale : true,
+            segmentShowStroke: false
+    };  
+    console.log("AirReport");
 
 }]);
-app.controller('landCtrl', ['$scope', function($scope){
+app.controller('landCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 
-	$scope.chart_options = {
-			percentageInnerCutout : 70,
-			animationSteps : 60,
-			animationEasing : "easeOutCubic",
-			// animateScale : true,
-			segmentShowStroke: false
-	};	
-	console.log("LandReport");
+    /* Navigation Bar setup */
+    //$(".side-nav .active").toggleClass("active");   //remove hughlight from other navigation elements
+    //$(".side-nav .dropdown").addClass("open");      //open side navigation dropdown (with sub-indicies)
+    /************************/
+
+    city = City.get($routeParams.cityId);
+    $scope.city = city;
+    //console.log("cityId "+ $routeParams.cityId);
+    
+    if (city != null){
+
+        //ELEMENT DATA SETUP 
+        for( var d in city.index_data) {
+
+            console.log(city.index_data[d]);
+            o = [
+                {value : city.index_data[d], color : '#fff'},
+                {value : 100 - city.index_data[d], color : 'transparent'}
+            ];
+            $scope[d] = o;
+        }
+    } else {
+
+        $location.path('/');
+
+    }
+    
+    
+    $scope.chart_options = {
+            percentageInnerCutout : 70,
+            animationSteps : 60,
+            animationEasing : "easeOutCubic",
+            // animateScale : true,
+            segmentShowStroke: false
+    };  
+    console.log("LandReport");
 
 }]);
 
-app.controller('wasteCtrl', ['$scope', function($scope){
+app.controller('wasteCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 
-	$scope.chart_options = {
-			percentageInnerCutout : 70,
-			animationSteps : 60,
-			animationEasing : "easeOutCubic",
-			// animateScale : true,
-			segmentShowStroke: false
-	};	
-	console.log("WasteReport");
+    /* Navigation Bar setup */
+    //$(".side-nav .active").toggleClass("active");   //remove hughlight from other navigation elements
+    //$(".side-nav .dropdown").addClass("open");      //open side navigation dropdown (with sub-indicies)
+    /************************/
+
+    city = City.get($routeParams.cityId);
+    $scope.city = city;
+    //console.log("cityId "+ $routeParams.cityId);
+    
+    if (city != null){
+
+        //ELEMENT DATA SETUP 
+        for( var d in city.index_data) {
+
+            console.log(city.index_data[d]);
+            o = [
+                {value : city.index_data[d], color : '#fff'},
+                {value : 100 - city.index_data[d], color : 'transparent'}
+            ];
+            $scope[d] = o;
+        }
+    } else {
+
+        $location.path('/');
+
+    }
+    
+    
+    $scope.chart_options = {
+            percentageInnerCutout : 70,
+            animationSteps : 60,
+            animationEasing : "easeOutCubic",
+            // animateScale : true,
+            segmentShowStroke: false
+    };  
+    console.log("WasteReport");
 
 }]);
 
-app.controller('energyCtrl', ['$scope', function($scope){
+app.controller('energyCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 
-	$scope.chart_options = {
-			percentageInnerCutout : 70,
-			animationSteps : 60,
-			animationEasing : "easeOutCubic",
-			// animateScale : true,
-			segmentShowStroke: false
-	};	
-	console.log("EnergyReport");
+    /* Navigation Bar setup */
+    //$(".side-nav .active").toggleClass("active");   //remove hughlight from other navigation elements
+    //$(".side-nav .dropdown").addClass("open");      //open side navigation dropdown (with sub-indicies)
+    /************************/
+
+    city = City.get($routeParams.cityId);
+    $scope.city = city;
+    //console.log("cityId "+ $routeParams.cityId);
+    
+    if (city != null){
+
+        //ELEMENT DATA SETUP 
+        for( var d in city.index_data) {
+
+            console.log(city.index_data[d]);
+            o = [
+                {value : city.index_data[d], color : '#fff'},
+                {value : 100 - city.index_data[d], color : 'transparent'}
+            ];
+            $scope[d] = o;
+        }
+    } else {
+
+        $location.path('/');
+
+    }
+    
+    
+    $scope.chart_options = {
+            percentageInnerCutout : 70,
+            animationSteps : 60,
+            animationEasing : "easeOutCubic",
+            // animateScale : true,
+            segmentShowStroke: false
+    };  
+    console.log("EnergyReport");
+
 }]);
 
 app.controller('projectsCtrl', ['$scope', function($scope){
@@ -274,19 +392,6 @@ app.controller('projectsCtrl', ['$scope', function($scope){
 
 
     console.log("Wat wat");
-
-}]);
-
-app.controller('energyCtrl', ['$scope', function($scope){
-
-	$scope.chart_options = {
-			percentageInnerCutout : 70,
-			animationSteps : 60,
-			animationEasing : "easeOutCubic",
-			// animateScale : true,
-			segmentShowStroke: false
-	};	
-	console.log("EnergyReport");
 
 }]);
 
