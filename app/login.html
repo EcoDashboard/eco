@@ -8,7 +8,7 @@
 
 <!-- Login Block -->
 <div class="row login-wrapper">
-    <div class="col-xs-6 col-md-offset-3">
+    <div class="col-xs-4 col-md-offset-4">
     <form class="form-horizontal" role="form">
         <div class="form-group">
             <div class="col-sm-10">
@@ -21,9 +21,9 @@
                 </div>
             </div>
             <div class="col-sm-4 col-md-offset-3">
-                <button type="submit" class="btn btn-success btn-block" style="text-allign:cetner">LogIn</button>
+                <button type="submit" class="btn btn-success btn-block">LogIn</button>
                 <div class="span4 text-center">OR</div>
-                <button type="button" class="btn btn-primary btn-block" id="sugnup-show">Sign In</button>
+                <button type="button" class="btn btn-primary btn-block" id="singnup-show">Sign In</button>
             </div>
     </form>
     </div>
@@ -36,57 +36,76 @@
         <div class="span5">Please, enter required information:</div>
         <form class="form-horizontal" role="form">
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                 <div class="col-xs-8">
                     <input type="email" class="form-control" id="signEmail" placeholder="Email">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">Password</label>
                 <div class="col-xs-8">
                     <input type="password" class="form-control" id="signPasswd" placeholder="Password">
+                    <p class="help-block">Password have to be from 8 to 16 simbols. It is recomanded to use upper- and lower-case letters, numbers (0-9) and simbols (!@$%). Please, do not use information entered here as a password.</p>
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Repeat Password</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">Repeat Password</label>
                 <div class="col-xs-8">
                     <input type="password" class="form-control" id="signPasswdRep" placeholder="Repeat Password">
                 </div>
             </div>
-            <div class="span 4">General Information</div>
+            <div class="span4">General Information</div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Country</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">Country</label>
                 <div class="col-xs-8">
                     <input type="text" class="form-control" id="signCountry" placeholder="Country">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">City Name</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">City Name</label>
                 <div class="col-xs-8">
                     <input type="text" class="form-control" id="signCity" placeholder="City Name">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">City Area</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">City Area</label>
                 <div class="col-xs-8">
                     <input type="text" class="form-control" id="signArea" placeholder="City Area is sq killomiters">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">City Population</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">City Population</label>
                 <div class="col-xs-8">
                     <input type="text" class="form-control" id="signPopulation" placeholder="City Population">
                 </div>
             </div>
-            <div class="span 4">Contact information</div>
+            <div class="span4">Contact Information</div>
             <div class="form-group form-inline">
-                <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
                 <div class="col-xs-4">
                     <input type="text" class="form-control" id="signContFName" placeholder="First Name">
                 </div>
                 <div class="col-xs-4">
                     <input type="text" class="form-control" id="signContLName" placeholder="Last Name">
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" id="signConEmail" placeholder="Contact's's Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">Phone Number</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" id="signContPhone" placeholder="Contact Phone Number">
+                </div>
+            </div>
+            <div class="row signup-error">
+                 <span> Sorry, we found some mistakes in the input fields! </span>
+             </div>
+            <div class="col-sm-4 col-md-offset-3">
+            <button type="submit" class="btn btn-success btn-block" id="signup">Sign Up</button>
             </div>
         </form>
     </div>

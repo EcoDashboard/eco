@@ -208,6 +208,115 @@ app.controller('aboutUsCtrl', ['$scope', function($scope){
 }]);
 app.controller('loginCtrl', ['$scope', function($scope){
 
+	//set navigation bar on the top of the page
+	$(".navbar").removeClass("navbar-fixed-bottom");
+	$(".navbar").addClass("navbar-fixed-top");
+
+	//show signing up block and hide login block on Sing Up button click
+	$('#singnup-show').click(function(e){
+		e.preventDefault();
+		$(".login-wrapper").slideUp();
+		$(".signup-wrapper").slideDown();
+	});
+
+	// Highlight field green if it not empty
+	$(".signup-wrapper input").focusout(function(e){
+			if($(this).val()!="" && this.id != "signEmail" && this.id != "signPasswd" && this.id != "signPasswdRep"){
+				$(this).parent().parent().addClass("has-success");
+			}
+	});
+
+	//email varification
+	$("#signEmail").focusout(function(e){
+			if(checkEmail($(this).val())){
+				$(this).parent().parent().removeClass("has-error");
+				$(this).parent().parent().addClass("has-success");
+			} else {
+				$(this).parent().parent().addClass("has-error");
+				$(this).parent().parent().removeClass("has-success");
+			}
+	});
+
+	//password verifications
+	$("#signPasswd").focusout(function(e){
+		if(checkPasswd($(this))){
+			$(this).parent().parent().removeClass("has-error");
+			$(this).parent().parent().addClass("has-success");
+		} else {
+			$(this).parent().parent().addClass("has-error");
+			$(this).parent().parent().removeClass("has-success");
+		}
+	});
+
+	$("#signPasswdRep").focusout(function(e){
+		if(checkPasswdRep($("#signPasswd"), $(this))){
+			$(this).parent().parent().removeClass("has-error");
+			$(this).parent().parent().addClass("has-success");
+		} else {
+			$(this).parent().parent().addClass("has-error");
+			$(this).parent().parent().removeClass("has-success");
+		}
+	});
+
+
+	$("#signup").click(function(e){
+		e.preventDefault();
+
+		/*CHECKING THE FIELDS*/
+		var fieldsCheck=true; 
+
+		$(".signup-wrapper input").each(function(e){
+			if(!$(this).val()){
+
+				fieldsCheck = false;
+			}
+		});
+
+		//checking email address
+		if(!checkEmail($("#signEmail").val())){
+			fieldsCheck = false;
+		}
+
+		//checking password and its repetion
+		if(!(checkPasswd($("#signPasswd")) && checkPasswdRep($("#signPasswd"),$("#signPasswdRep")))){
+			fieldsCheck = false;
+		}
+
+		//if all checks succesfull - sign up!
+		if(fieldsCheck){
+			/*
+				ALL POST-GET OPERATIONS ON SUCCESS PUT HERE
+			*/
+		} else {
+			$(".signup-error").show();
+		}
+	});
+
+	//Email Varification Function
+		function checkEmail(email){
+			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			if(emailReg.test(email) && email != ""){
+				return true;
+			} else {
+				return false;
+			}
+		}
+	//Password Varification Function
+		function checkPasswd($passwd){
+			if($passwd.val().length > 7 && $passwd.val().length < 17){
+				return true;
+			} else {
+				return false;
+			}
+		}
+	//Password Repetition Varification Function
+		function checkPasswdRep($passwd, $passwdrep){
+			if($passwd.val() == $passwdrep.val()){
+				return true;
+			} else {
+				return false;
+			}
+		}
 }]);
 
 // app.controller('dashboardCtrl', ['$scope', function($scope){
