@@ -23,9 +23,6 @@
 
 /* END HOW IT WORKS */
 
-
-
-
 .air {
   color:#BEE7F2
 }
@@ -282,3 +279,25 @@
 	height: 100%;
 	overflow-x: hidden;
 }*/
+
+// HOMEPAGE - END
+
+//LOGIN PAGE
+.login-wrapper{
+  margin-top: 100px;
+}
+.signup-wrapper{
+  margin-top: 40px;
+
+  form{
+    margin-top: 10px;
+  }
+
+  .span5{
+    font-size: 2rem;
+    font-family:"Raleway", sans-serif;
+    font-weight:200;
+    color: #333;
+    text-shadow: 1px 1px 3px #2e2e2e;
+  }
+}
