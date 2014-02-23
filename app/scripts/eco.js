@@ -20,6 +20,10 @@ app.config(['$routeProvider',
       	templateUrl: 'howitworks.html',
       	controller: 'worksCtrl'
       }).
+      when('/login', {
+      	templateUrl: 'login.html',
+      	controller: 'loginCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });
@@ -200,6 +204,9 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 }]);
 
 app.controller('aboutUsCtrl', ['$scope', function($scope){
+
+}]);
+app.controller('loginCtrl', ['$scope', function($scope){
 
 }]);
 
