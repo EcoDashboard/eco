@@ -283,9 +283,11 @@
 // HOMEPAGE - END
 
 //LOGIN - SIGNUP PAGE
+
 .login-wrapper{
   margin-top: 100px;
 }
+
 .signup-wrapper{
   margin-top: 100px;
   display: none;
@@ -328,3 +330,12 @@
     }
   }
 }
+
+// City List Page
+
+div.city-list{
+  .row{
+    margin-top: 30px;
+  }
+}
+

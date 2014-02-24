@@ -24,6 +24,10 @@ app.config(['$routeProvider',
       	templateUrl: 'login.html',
       	controller: 'loginCtrl'
       }).
+      when('/city-list', {
+      	templateUrl: 'city_list.html',
+      	controller: 'cityListCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });
@@ -112,6 +116,10 @@ app.controller('homeCtrl', ['$scope', function($scope){
 
 app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 	console.log("CITY PROFILE");
+
+	//set navigation bar on the top of the page
+	$(".navbar").removeClass("navbar-fixed-bottom");
+	$(".navbar").addClass("navbar-fixed-top");
 
 	city = City.get($routeParams.cityId);
 
@@ -206,6 +214,7 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 app.controller('aboutUsCtrl', ['$scope', function($scope){
 
 }]);
+
 app.controller('loginCtrl', ['$scope', function($scope){
 
 	//set navigation bar on the top of the page
@@ -317,6 +326,10 @@ app.controller('loginCtrl', ['$scope', function($scope){
 				return false;
 			}
 		}
+}]);
+
+app.controller('cityListCtrl', ['$scope', function($scope){
+
 }]);
 
 // app.controller('dashboardCtrl', ['$scope', function($scope){
