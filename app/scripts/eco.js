@@ -236,8 +236,8 @@ app.controller('loginCtrl', ['$scope', function($scope){
 	});
 
 	//email varification
-	$("#signEmail").focusout(function(e){
-			if(checkEmail($(this).val())){
+	$("#signEmail, #signConEmail").focusout(function(e){
+			if(isEmail($(this).val())){
 				$(this).parent().parent().removeClass("has-error");
 				$(this).parent().parent().addClass("has-success");
 			} else {
@@ -267,6 +267,16 @@ app.controller('loginCtrl', ['$scope', function($scope){
 		}
 	});
 
+	// phone number verification
+	$("#signContPhone").focusout(function(e){
+		if(isPhone(this.value)){
+			$(this).parent().parent().removeClass("has-error");
+			$(this).parent().parent().addClass("has-success");
+		} else {
+			$(this).parent().parent().addClass("has-error");
+			$(this).parent().parent().removeClass("has-success");
+		}
+	});
 
 	$("#signup").click(function(e){
 		e.preventDefault();
@@ -275,17 +285,22 @@ app.controller('loginCtrl', ['$scope', function($scope){
 		var fieldsCheck=true; 
 
 		$(".signup-wrapper input").each(function(e){
-			if(!$(this).val()){
-
+			if(!$(this).val() && this.id != "signState"){
+				$(this).parent().parent().addClass("has-error");
+				$(this).parent().parent().removeClass("has-success");
 				fieldsCheck = false;
-			}
+			} 
 		});
 
-		//checking email address
-		if(!checkEmail($("#signEmail").val())){
+		//checking email addresses
+		if(!isEmail($("#signEmail").val()) && !isEmail($("#signConEmail").val())){
 			fieldsCheck = false;
 		}
 
+		//checking phone number
+		if(!isPhone($("#signContPhone").val())){
+			fieldsCheck = false;
+		}
 		//checking password and its repetion
 		if(!(checkPasswd($("#signPasswd")) && checkPasswdRep($("#signPasswd"),$("#signPasswdRep")))){
 			fieldsCheck = false;
@@ -293,16 +308,19 @@ app.controller('loginCtrl', ['$scope', function($scope){
 
 		//if all checks succesfull - sign up!
 		if(fieldsCheck){
+			alert("All Correct. Sent to Server");
+			$(".signup-error").hide();
 			/*
 				ALL POST-GET OPERATIONS ON SUCCESS PUT HERE
 			*/
 		} else {
-			$(".signup-error").show();
+			$(".signup-error").fadeOut();
+			$(".signup-error").fadeIn();
 		}
 	});
 
 	//Email Varification Function
-		function checkEmail(email){
+		function isEmail(email){
 			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 			if(emailReg.test(email) && email != ""){
 				return true;
@@ -310,6 +328,7 @@ app.controller('loginCtrl', ['$scope', function($scope){
 				return false;
 			}
 		}
+
 	//Password Varification Function
 		function checkPasswd($passwd){
 			if($passwd.val().length > 7 && $passwd.val().length < 17){
@@ -318,6 +337,7 @@ app.controller('loginCtrl', ['$scope', function($scope){
 				return false;
 			}
 		}
+
 	//Password Repetition Varification Function
 		function checkPasswdRep($passwd, $passwdrep){
 			if($passwd.val() == $passwdrep.val()){
@@ -326,6 +346,15 @@ app.controller('loginCtrl', ['$scope', function($scope){
 				return false;
 			}
 		}
+	//Check for number values
+	function isPhone(str){
+		var rule = /[a-z-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/i;
+		if(rule.test(str)){
+			return false;
+		} else {
+			return true;
+		}
+	}
 }]);
 
 app.controller('cityListCtrl', ['$scope', function($scope){
