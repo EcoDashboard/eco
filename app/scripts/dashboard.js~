@@ -66,7 +66,67 @@ app.config(['$routeProvider', function($routeProvider){
 
 
 app.controller('dashboardCtrl', ['$scope', function($scope){
-
+	
+	$scope.final_donut = [
+        {
+            value: 78,
+            color:"#FFF"
+        },
+        {
+            value: 22,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.air_donut = [
+        {
+            value: 67,
+            color:"#FFF"
+        },
+        {
+            value: 22,
+            color:"#BADEEF"
+        },
+   ]
+	$scope.water_donut = [
+        {
+            value: 67,
+            color:"#FFF"
+        },
+        {
+            value: 22,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.land_donut = [
+        {
+            value: 67,
+            color:"#FFF"
+        },
+        {
+            value: 22,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.waste_donut = [
+        {
+            value: 67,
+            color:"#FFF"
+        },
+        {
+            value: 22,
+            color:"#BADEEF"
+        },
+   ]
+   $scope.energy_donut = [
+        {
+            value: 67,
+            color:"#FFF"
+        },
+        {
+            value: 22,
+            color:"#BADEEF"
+        },
+   ]
 	$scope.chart_options = {
 			percentageInnerCutout : 70,
 			animationSteps : 60,
@@ -91,7 +151,6 @@ app.controller('waterCtrl', ['$scope', function($scope){
 }]);
 app.controller('airCtrl', ['$scope', function($scope){
 
-<<<<<<< HEAD
 	$scope.chart_options = {
 			percentageInnerCutout : 70,
 			animationSteps : 60,
@@ -138,7 +197,8 @@ app.controller('energyCtrl', ['$scope', function($scope){
 			segmentShowStroke: false
 	};	
 	console.log("EnergyReport");
-=======
+}]);
+
 app.controller('projectsCtrl', ['$scope', function($scope){
 
     
@@ -200,7 +260,6 @@ app.controller('projectsCtrl', ['$scope', function($scope){
 
 
     console.log("Wat wat");
->>>>>>> 839465ce86403a00a9e1f8ecd4602665e810282b
 
 }]);
 

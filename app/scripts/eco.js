@@ -20,6 +20,14 @@ app.config(['$routeProvider',
       	templateUrl: 'howitworks.html',
       	controller: 'worksCtrl'
       }).
+      when('/login', {
+      	templateUrl: 'login.html',
+      	controller: 'loginCtrl'
+      }).
+      when('/city-list', {
+      	templateUrl: 'city_list.html',
+      	controller: 'cityListCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });
@@ -40,9 +48,10 @@ app.factory('City', ['$http', function($http){
 				"contact_number" : "12065558050",
 				"council_address": "1st Ave, Seattle WA 98105",
 				"index_data" : {
+					"final_index": 66,
 					"air_index": 65,
 					"water_index": 88,
-					"earth_index": 45,
+					"land_index": 45,
 					"waste_index": 99,
 					"energy_index": 33
 				}
@@ -108,17 +117,22 @@ app.controller('homeCtrl', ['$scope', function($scope){
 app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams', function(City, $scope, $location, $routeParams){
 	console.log("CITY PROFILE");
 
+	//set navigation bar on the top of the page
+	$(".navbar").removeClass("navbar-fixed-bottom");
+	$(".navbar").addClass("navbar-fixed-top");
+
 	city = City.get($routeParams.cityId);
 
 	console.log("cityId "+ $routeParams.cityId);
 
-	colors = {
-		'air'   : '#BEE7F2',
-		'water' : "#00A1EF",
-		'earth' : "#63CE0A",
-		'waste' : "#a1a1a1",
-		'energy': "#FAEE40"
-	};
+	// colors = {
+	// 	'final' : 'transparent',
+	// 	'air'   : '#BEE7F2',
+	// 	'water' : "#00A1EF",
+	// 	'land' : "#63CE0A",
+	// 	'waste' : "#a1a1a1",
+	// 	'energy': "#FAEE40"
+	// };
 
 
 	if (city != null){
@@ -131,7 +145,7 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 			console.log(city.index_data[d]);
 			o = [
 				{value : city.index_data[d], color : '#fff'},
-				{value : 100 - city.index_data[d], color : colors[d.split("_")[0]]}
+				{value : 100 - city.index_data[d], color : 'transparent'}
 			]
 			$scope[d] = o;
 		}
@@ -161,11 +175,189 @@ app.controller('cityProfileCtrl', ['City', '$scope', '$location', '$routeParams'
 
 	}
 
-	
-	
+	//jQuery page control block (animations)
+	$(document).ready(function(){
+		//scrolling to a sub-index block
+		$("#affix_menu li").click(function(){
+			$.easing.power = function(t, millisecondsSince, startValue, endValue, totalDuration) {
+    			return Math.pow(t,3);
+			};
+
+			event.preventDefault();
+			$('html, body').animate({
+    				scrollTop: $($(this).find("a").attr("href")).offset().top-100
+ 				}, 
+ 				1500,
+ 				'power'
+ 			);
+		});
+
+		//Showing only out of screen objects in navigation menu
+		$(window).scroll(function(){
+			$(".subindices").each(function(){
+				var blockTop = $(this).offset().top + $(this).height()*0.25;
+				var blockBottom = blockTop+$(this).height()*0.6;
+				var windowTop = $(document).scrollTop();
+				var windowBottom = windowTop+$(window).height();
+				var $menuObject = $("#affix_menu ."+$(this).attr("id"));		//menu object related to the current block
+				if(blockTop >= windowTop & blockBottom <= windowBottom){		//if block on screen
+					$menuObject.fadeOut();
+				} else {														//if block off screen
+					$menuObject.fadeIn();
+				}
+			});
+		});		
+	});
+	// .jQuery control block
 }]);
 
 app.controller('aboutUsCtrl', ['$scope', function($scope){
+
+}]);
+
+app.controller('loginCtrl', ['$scope', function($scope){
+
+	//set navigation bar on the top of the page
+	$(".navbar").removeClass("navbar-fixed-bottom");
+	$(".navbar").addClass("navbar-fixed-top");
+
+	//show signing up block and hide login block on Sing Up button click
+	$('#singnup-show').click(function(e){
+		e.preventDefault();
+		$(".login-wrapper").slideUp();
+		$(".signup-wrapper").slideDown();
+	});
+
+	// Highlight field green if it not empty
+	$(".signup-wrapper input").focusout(function(e){
+			if($(this).val()!="" && this.id != "signEmail" && this.id != "signPasswd" && this.id != "signPasswdRep"){
+				$(this).parent().parent().addClass("has-success");
+			}
+	});
+
+	//email varification
+	$("#signEmail, #signConEmail").focusout(function(e){
+			if(isEmail($(this).val())){
+				$(this).parent().parent().removeClass("has-error");
+				$(this).parent().parent().addClass("has-success");
+			} else {
+				$(this).parent().parent().addClass("has-error");
+				$(this).parent().parent().removeClass("has-success");
+			}
+	});
+
+	//password verifications
+	$("#signPasswd").focusout(function(e){
+		if(checkPasswd($(this))){
+			$(this).parent().parent().removeClass("has-error");
+			$(this).parent().parent().addClass("has-success");
+		} else {
+			$(this).parent().parent().addClass("has-error");
+			$(this).parent().parent().removeClass("has-success");
+		}
+	});
+
+	$("#signPasswdRep").focusout(function(e){
+		if(checkPasswdRep($("#signPasswd"), $(this))){
+			$(this).parent().parent().removeClass("has-error");
+			$(this).parent().parent().addClass("has-success");
+		} else {
+			$(this).parent().parent().addClass("has-error");
+			$(this).parent().parent().removeClass("has-success");
+		}
+	});
+
+	// phone number verification
+	$("#signContPhone").focusout(function(e){
+		if(isPhone(this.value)){
+			$(this).parent().parent().removeClass("has-error");
+			$(this).parent().parent().addClass("has-success");
+		} else {
+			$(this).parent().parent().addClass("has-error");
+			$(this).parent().parent().removeClass("has-success");
+		}
+	});
+
+	$("#signup").click(function(e){
+		e.preventDefault();
+
+		/*CHECKING THE FIELDS*/
+		var fieldsCheck=true; 
+
+		$(".signup-wrapper input").each(function(e){
+			if(!$(this).val() && this.id != "signState"){
+				$(this).parent().parent().addClass("has-error");
+				$(this).parent().parent().removeClass("has-success");
+				fieldsCheck = false;
+			} 
+		});
+
+		//checking email addresses
+		if(!isEmail($("#signEmail").val()) && !isEmail($("#signConEmail").val())){
+			fieldsCheck = false;
+		}
+
+		//checking phone number
+		if(!isPhone($("#signContPhone").val())){
+			fieldsCheck = false;
+		}
+		//checking password and its repetion
+		if(!(checkPasswd($("#signPasswd")) && checkPasswdRep($("#signPasswd"),$("#signPasswdRep")))){
+			fieldsCheck = false;
+		}
+
+		//if all checks succesfull - sign up!
+		if(fieldsCheck){
+			alert("All Correct. Sent to Server");
+			$(".signup-error").hide();
+			/*
+				ALL POST-GET OPERATIONS ON SUCCESS PUT HERE
+			*/
+		} else {
+			$(".signup-error").fadeOut();
+			$(".signup-error").fadeIn();
+		}
+	});
+
+	//Email Varification Function
+		function isEmail(email){
+			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			if(emailReg.test(email) && email != ""){
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+	//Password Varification Function
+		function checkPasswd($passwd){
+			if($passwd.val().length > 7 && $passwd.val().length < 17){
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+	//Password Repetition Varification Function
+		function checkPasswdRep($passwd, $passwdrep){
+			if($passwd.val() == $passwdrep.val()){
+				return true;
+			} else {
+				return false;
+			}
+		}
+	//Check for number values
+	function isPhone(str){
+		var rule = /[a-z-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/i;
+		if(rule.test(str)){
+			return false;
+		} else {
+			return true;
+		}
+	}
+}]);
+
+app.controller('cityListCtrl', ['$scope', function($scope){
 
 }]);
 
