@@ -221,6 +221,28 @@ app.controller('loginCtrl', ['$scope', function($scope){
 	$(".navbar").removeClass("navbar-fixed-bottom");
 	$(".navbar").addClass("navbar-fixed-top");
 
+	//Login processing
+	/*
+	$("#login").click(function(e){
+		e.preventDefault();
+
+		$http({
+			method: 'POST',
+			url : 'http://tranquil-garden-7617.herokuapp.com/login',
+			data : {
+				email : $('#loginEmail'),
+				password : $('#loginPasswd')
+			}
+		}).
+		success(function(data){
+	
+		}).
+		error(function(status){
+	
+		});
+	});
+	*/
+
 	//show signing up block and hide login block on Sing Up button click
 	$('#singnup-show').click(function(e){
 		e.preventDefault();
@@ -236,7 +258,7 @@ app.controller('loginCtrl', ['$scope', function($scope){
 	});
 
 	//email varification
-	$("#signEmail, #signConEmail").focusout(function(e){
+	$("#signEmail, #signConEmail, #loginEmail").focusout(function(e){
 			if(isEmail($(this).val())){
 				$(this).parent().parent().removeClass("has-error");
 				$(this).parent().parent().addClass("has-success");
@@ -247,7 +269,7 @@ app.controller('loginCtrl', ['$scope', function($scope){
 	});
 
 	//password verifications
-	$("#signPasswd").focusout(function(e){
+	$("#signPasswd, #loginPasswd").focusout(function(e){
 		if(checkPasswd($(this))){
 			$(this).parent().parent().removeClass("has-error");
 			$(this).parent().parent().addClass("has-success");
@@ -278,10 +300,13 @@ app.controller('loginCtrl', ['$scope', function($scope){
 		}
 	});
 
-	$("#signup").click(function(e){
+	/*
+	// Ign Up Button (All checks and Submission)
+	$("#signup-button").click(function(e){
 		e.preventDefault();
 
 		/*CHECKING THE FIELDS*/
+		/*
 		var fieldsCheck=true; 
 
 		$(".signup-wrapper input").each(function(e){
@@ -310,15 +335,39 @@ app.controller('loginCtrl', ['$scope', function($scope){
 		if(fieldsCheck){
 			alert("All Correct. Sent to Server");
 			$(".signup-error").hide();
-			/*
-				ALL POST-GET OPERATIONS ON SUCCESS PUT HERE
-			*/
+			
+				// All checks are successful
+				// Post the data to the server
+
+				//Build the messgae
+				var msg = {
+					'user_name' : $("#signConName").val(),
+					'password' : $("#signPasswd").val(),
+					'email' : $("#signEmail").val(),
+					'city_id_admin' : 1
+				}
+
+				//post
+				$http({
+					method: 'POST',
+					url : 'http://tranquil-garden-7617.herokuapp.com/register',
+					message : msg
+				}).
+				success(function(data, status){
+					alert("Success!");
+					console.log(data);
+				}).
+				error(function(){
+					alert("FAIL!");
+					console.error(status);
+				});
+
 		} else {
 			$(".signup-error").fadeOut();
 			$(".signup-error").fadeIn();
 		}
 	});
-
+	*/
 	//Email Varification Function
 		function isEmail(email){
 			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
