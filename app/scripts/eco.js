@@ -218,6 +218,9 @@ app.controller('aboutUsCtrl', ['$scope', function($scope){
 app.controller('loginCtrl', ['$scope', function($scope){
 
 	//decoration
+	//Setting navbar to top
+	$(".navbar").removeClass("navbar-fixed-bottom");
+	$(".navbar").addClass("navbar-fixed-top");
 	//fixing the possitoin of grass even on scrolling
 	stickGrassBottom();
 	$(window).scroll(function(){
@@ -381,7 +384,9 @@ app.controller('loginCtrl', ['$scope', function($scope){
 		var winHeight = $(window).height();
 		var scrollPosition = $(window).scrollTop();
 		var grassPositoin = winHeight + scrollPosition - 100;
-		$(".beauties").css("top",grassPositoin+"px");
+		var turbinePosition = winHeight + scrollPosition - 500;
+		$(".grass").css("top",grassPositoin+"px");
+		$(".windTurbine").css("top", turbinePosition+"px");
 	}
 	//Email Varification Function
 		function isEmail(email){
